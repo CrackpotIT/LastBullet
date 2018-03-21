@@ -22,25 +22,32 @@ public class HitBox : MonoBehaviour {
         if (coll.gameObject.tag == "Bullet") {
             if (!invincible) {
                 Bullet bullet = coll.gameObject.GetComponent<Bullet>();
-                health -= bullet.damage;
+                if (!bullet.destroyed) {
+                    health -= bullet.damage;
 
-                if (health <= 0) {
-                    //dead
-                    parentEnemyController.Killed();
-                } else {
-                    parentEnemyController.Damaged();
+                    if (health <= 0) {
+                        //dead
+                        parentEnemyController.Killed();
+                    } else {
+                        parentEnemyController.Damaged();
+                    }
                 }
+                bullet.destroyed = true;
+
             } else {
                 parentEnemyController.Damaged();
             }
 
             // Destroy bullet
+
             Destroy(coll.gameObject);
         }
     }
 
     void OnCollisionExit2D(Collision2D coll) {
         if (coll.gameObject.tag == "Bullet") {
+            Bullet bullet = coll.gameObject.GetComponent<Bullet>();
+            bullet.destroyed = true;
             // Destroy bullet
             Destroy(coll.gameObject);
         }

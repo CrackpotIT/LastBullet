@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour {
 
     public BULLET_TYPE bulletType;
     public float damage;
+    public bool destroyed = false;
 
     private float speed;       
     private Vector3 vector;

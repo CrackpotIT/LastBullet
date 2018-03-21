@@ -31,11 +31,8 @@ public class Cam : MonoBehaviour {
         if (lastHeight != Screen.height) {
             lastHeight = Screen.height;
             
-            float scale = 5f;
+            float scale = 4f;
             if (Screen.height < 1080) {
-                scale = 4f;
-            }
-            if (Screen.height < 768) {
                 scale = 3f;
             }
             if (Screen.height < 512) {
