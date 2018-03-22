@@ -2,14 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class ZombieController : AbstractEnemyController {
     public enum BODYPART { HEAD, BODY };
-
-    public float seenEverySeconds;
-    public float moveSpeed;
-
-    [HideInInspector]
-    public Vector2 targetPosition;
 
     public float damageTime = 0;
 

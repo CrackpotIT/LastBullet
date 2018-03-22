@@ -2,42 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetPractice : MonoBehaviour {
+public class Can : MonoBehaviour {
 
+    public AudioClip hitSound;
     private Animator anim;
     private BoxCollider2D boxCollider;
+    private bool destroyed = false;
+    private float directionX;
 
     void Start() {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        directionX = transform.parent.transform.localScale.x;
+    }
+
+    void Update() {
+        if (destroyed) {
+            transform.Translate(new Vector3(directionX  * 3,1,0) * 6 * Time.deltaTime);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Bullet") {
             Bullet bullet = coll.gameObject.GetComponent<Bullet>();
             if (!bullet.destroyed) {
+                // play sound
+                SoundManager.PlaySFX(hitSound);
                 // destroy can
                 anim.SetBool("ROTATE", true);
                 transform.parent = null;
-                boxCollider.enabled = false;
-                Move();
+                //boxCollider.enabled = false;
+                destroyed = true;
+                //Move();
             }
             bullet.destroyed = true;
             // Destroy bullet
             Destroy(coll.gameObject);
-        }
-    }
-
-    public void Move() {
-        StartCoroutine(MoveOverSpeed(gameObject, new Vector3(10, 10, 0), 10));
-    }
-
-
-    public IEnumerator MoveOverSpeed(GameObject objectToMove, Vector3 end, float speed) {
-        // speed should be 1 unit per second
-        while (objectToMove.transform.position != end) {
-            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, end, speed * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
         }
     }
 

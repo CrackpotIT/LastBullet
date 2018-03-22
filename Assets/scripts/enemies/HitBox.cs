@@ -6,13 +6,13 @@ public class HitBox : MonoBehaviour {
 
     public bool invincible = false;
     public float health;
-    public EnemyController.BODYPART bodypart;
+    public ZombieController.BODYPART bodypart;
 
-    private EnemyController parentEnemyController;
+    private ZombieController parentEnemyController;
 
 	// Use this for initialization
 	void Start () {
-        parentEnemyController = transform.parent.GetComponent<EnemyController>();
+        parentEnemyController = transform.parent.GetComponent<ZombieController>();
         if (parentEnemyController == null) {
             Debug.LogError("Enemy HitBox: Parent has no EnemyController!");
         }
