@@ -24,24 +24,28 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public bool isMoving = false;
 
-    private Animator anim;
+    public AbstractState currentState;
 
-    private AbstractState currentState;        
+    private GunModel gunModel;
+    private PlayerModel playerModel;    
 
     void Start() {
         SoundManager.SetGlobalVolume(.5f);
-        anim = GetComponent<Animator>();
 
         currentState = new IdleTopState(AbstractState.ACTION.NA);
+
+        // search model for player and gun
+        gunModel = transform.GetComponentInChildren<GunModel>();
+        playerModel = transform.GetComponentInChildren<PlayerModel>();
     }
 
     private void Update() {
         // handle StateMachine
-        AbstractState newState = currentState.UpdateState(this, anim);
+        AbstractState newState = currentState.UpdateState(this, playerModel, gunModel);
         if (newState != null) {
-            currentState.OnExit(this, anim);
+            currentState.OnExit(this, playerModel, gunModel);
             currentState = newState;
-            currentState.OnEnter(this, anim);
+            currentState.OnEnter(this, playerModel, gunModel);
         }
     }
 
@@ -72,9 +76,7 @@ public class PlayerController : MonoBehaviour {
     public void EventReload() {
         gun.Reload();
     }
-    public void EventAnimation(string param) {
-        currentState.HandleAnimEvent(param, this, anim);
-    }
+
 
 
     public void MovePlayer(Vector3 endPosition) {

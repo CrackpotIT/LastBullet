@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PlayerIdleDown
+  m_Name: PistolMoveDown
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,11 +19,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: f594871c90d336f42b2144f713898816, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: f594871c90d336f42b2144f713898816, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: f594871c90d336f42b2144f713898816, type: 3}
+      value: {fileID: 21300000, guid: 63bf8022535d8bb4a97b3ff02a58bd36, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -43,15 +39,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: f594871c90d336f42b2144f713898816, type: 3}
-    - {fileID: 21300000, guid: f594871c90d336f42b2144f713898816, type: 3}
-    - {fileID: 21300000, guid: f594871c90d336f42b2144f713898816, type: 3}
+    - {fileID: 21300000, guid: 63bf8022535d8bb4a97b3ff02a58bd36, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

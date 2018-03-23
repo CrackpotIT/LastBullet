@@ -8,15 +8,14 @@ public class MoveUpState : AbstractState {
         currentAction = action;
     }
 
-    public override void OnEnter(PlayerController playerController, Animator animator) {
-        Debug.Log("MoveUpState OnEnter");
-        
-        animator.SetBool(MOVE_UP, true);
+    public override void OnEnter(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+        playerModel.animator.SetBool(PlayerModel.MOVE_UP, true);
+        gunModel.animator.SetBool(GunModel.MOVE_UP, true);
         playerController.currentDirectionY = 0;
         playerController.MovePlayer(playerController.coordinates.top.position);
     }
 
-    public override AbstractState UpdateState(PlayerController playerController, Animator animator) {
+    public override AbstractState UpdateState(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
 
         if (!playerController.isMoving) {
             if (playerController.gun.IsReady()) {
@@ -28,7 +27,8 @@ public class MoveUpState : AbstractState {
         return null;
     }
 
-    public override void OnExit(PlayerController playerController, Animator animator) {
-        animator.SetBool(MOVE_UP, false);
+    public override void OnExit(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+        playerModel.animator.SetBool(PlayerModel.MOVE_UP, false);
+        gunModel.animator.SetBool(GunModel.MOVE_UP, false);
     }
 }

@@ -6,13 +6,11 @@ public class Can : MonoBehaviour {
 
     public AudioClip hitSound;
     private Animator anim;
-    private BoxCollider2D boxCollider;
     private bool destroyed = false;
     private float directionX;
 
     void Start() {
         anim = GetComponent<Animator>();
-        boxCollider = GetComponent<BoxCollider2D>();
         directionX = transform.parent.transform.localScale.x;
     }
 

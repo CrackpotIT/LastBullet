@@ -8,13 +8,13 @@ public class IdleTopState : AbstractState {
         currentAction = action;
     }
 
-    public override void OnEnter(PlayerController playerController, Animator animator) {
-        Debug.Log("IdleTopState OnEnter");
-        animator.SetBool(IDLE_TOP, true);
+    public override void OnEnter(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+        playerModel.animator.SetBool(PlayerModel.IDLE_TOP, true);
+        gunModel.animator.SetBool(GunModel.IDLE_TOP, true);
         playerController.currentDirectionY = -1;
     }
 
-    public override AbstractState UpdateState(PlayerController playerController, Animator animator) {
+    public override AbstractState UpdateState(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
 
         if (currentAction == ACTION.BOTTOM_LEFT || currentAction == ACTION.BOTTOM_RIGHT) {
             UpdateDirectionX(playerController);
@@ -31,7 +31,8 @@ public class IdleTopState : AbstractState {
         return null;
     }
 
-    public override void OnExit(PlayerController playerController, Animator animator) {
-        animator.SetBool(IDLE_TOP, false);
+    public override void OnExit(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+        playerModel.animator.SetBool(PlayerModel.IDLE_TOP, false);
+        gunModel.animator.SetBool(GunModel.IDLE_TOP, false);
     }
 }
