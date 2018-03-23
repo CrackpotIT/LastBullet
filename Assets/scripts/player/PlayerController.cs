@@ -26,7 +26,11 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public GunModel gunModel;
     [HideInInspector]
-    public PlayerModel playerModel;    
+    public PlayerModel playerModel;
+
+    private void Awake() {
+        GameObject instance = Instantiate(Resources.Load("GunModel_SuckSour", typeof(GameObject))) as GameObject;
+    }
 
     void Start() {
         SoundManager.SetGlobalVolume(.5f);
