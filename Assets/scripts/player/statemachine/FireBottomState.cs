@@ -6,32 +6,38 @@ public class FireBottomState: AbstractState {
 
     private bool animationFinished = false;
 
-    public override void OnEnter(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-        Debug.Log("FireBottomState OnEnter");
+    public FireBottomState(PlayerController playerController) : base(playerController) {        
+    }
 
+    public override void OnEnter() {
         if (playerController.gun.HasAmmunition()) {
-            playerModel.animator.SetBool(PlayerModel.FIRE_BOTTOM, true);
-            gunModel.animator.SetBool(GunModel.FIRE_BOTTOM, true);
+            playerController.playerModel.SetAnimatorBool(PlayerModel.FIRE_BOTTOM, true);
+            playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM, true);
         } else {
             animationFinished = true;
         }
         playerController.gun.FireGun(playerController.currentDirectionX);
     }
 
-    public override AbstractState UpdateState(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+    public override AbstractState UpdateState() {
 
         if (animationFinished) {
-            return new IdleBottomState(currentAction);
+            return new IdleBottomState(currentAction, playerController);
         }
         return null;
     }
 
-    public override void OnExit(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-        playerModel.animator.SetBool(PlayerModel.FIRE_BOTTOM, false);
-        gunModel.animator.SetBool(GunModel.FIRE_BOTTOM, false);
+    public override void OnExit() {
+        playerController.playerModel.SetAnimatorBool(PlayerModel.FIRE_BOTTOM, false);
+        playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM, false);
+        playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM_RELEASE, false);
     }
 
     public override void HandleAnimEvent(string parameter) {
-        animationFinished = true;
+        if (parameter == GunModel.ANIM_PARAM_FIRE_RELEASE) {
+            playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM_RELEASE, true);
+        } else {
+            animationFinished = true;
+        }
     }
 }

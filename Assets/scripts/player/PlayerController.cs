@@ -14,9 +14,7 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed;
     public Gun gun;
     public Coordinates coordinates;
-
-    [HideInInspector]
-    public Inventory inventory = new Inventory();
+    
     [HideInInspector]
     public int currentDirectionX = 1;  // 1=right, -1=left
     [HideInInspector]
@@ -25,14 +23,15 @@ public class PlayerController : MonoBehaviour {
     public bool isMoving = false;
 
     public AbstractState currentState;
-
-    private GunModel gunModel;
-    private PlayerModel playerModel;    
+    [HideInInspector]
+    public GunModel gunModel;
+    [HideInInspector]
+    public PlayerModel playerModel;    
 
     void Start() {
         SoundManager.SetGlobalVolume(.5f);
 
-        currentState = new IdleTopState(AbstractState.ACTION.NA);
+        currentState = new IdleTopState(AbstractState.ACTION.NA, this);
 
         // search model for player and gun
         gunModel = transform.GetComponentInChildren<GunModel>();
@@ -41,11 +40,11 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
         // handle StateMachine
-        AbstractState newState = currentState.UpdateState(this, playerModel, gunModel);
+        AbstractState newState = currentState.UpdateState();
         if (newState != null) {
-            currentState.OnExit(this, playerModel, gunModel);
+            currentState.OnExit();
             currentState = newState;
-            currentState.OnEnter(this, playerModel, gunModel);
+            currentState.OnEnter();
         }
     }
 
@@ -74,7 +73,7 @@ public class PlayerController : MonoBehaviour {
         currentState.HandleEvent(AbstractState.ACTION.BOTTOM_RIGHT);
     }
     public void EventReload() {
-        gun.Reload();
+        gun.Reload(gunModel);
     }
 
 

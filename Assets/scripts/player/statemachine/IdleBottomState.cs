@@ -4,35 +4,35 @@ using UnityEngine;
 
 public class IdleBottomState: AbstractState {
 
-    public IdleBottomState(ACTION action) {
+    public IdleBottomState(ACTION action, PlayerController playerController) : base(playerController) {
         currentAction = action;
     }
-
-    public override void OnEnter(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-        playerModel.animator.SetBool(PlayerModel.IDLE_BOTTOM, true);
-        gunModel.animator.SetBool(GunModel.IDLE_BOTTOM, true);
+    
+    public override void OnEnter() {
+        playerController.playerModel.SetAnimatorBool(PlayerModel.IDLE_BOTTOM, true);
+        playerController.gunModel.SetAnimatorBool(GunModel.IDLE_BOTTOM, true);
         playerController.currentDirectionY = -1;
     }
 
-    public override AbstractState UpdateState(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+    public override AbstractState UpdateState() {
         
         if (currentAction == ACTION.TOP_LEFT || currentAction == ACTION.TOP_RIGHT) {
-            UpdateDirectionX(playerController);
-            return new MoveUpState(currentAction);
+            UpdateDirectionX();
+            return new MoveUpState(currentAction, playerController);
         }
 
         if (currentAction == ACTION.BOTTOM_LEFT || currentAction == ACTION.BOTTOM_RIGHT) {
-            UpdateDirectionX(playerController);
+            UpdateDirectionX();
             if (playerController.gun.IsReady()) {
-                return new FireBottomState();
+                return new FireBottomState(playerController);
             }            
         }
 
         return null;
     }
 
-    public override void OnExit(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-        playerModel.animator.SetBool(PlayerModel.IDLE_BOTTOM, false);
-        gunModel.animator.SetBool(GunModel.IDLE_BOTTOM, false);
+    public override void OnExit() {
+        playerController.playerModel.SetAnimatorBool(PlayerModel.IDLE_BOTTOM, false);
+        playerController.gunModel.SetAnimatorBool(GunModel.IDLE_BOTTOM, false);
     }
 }

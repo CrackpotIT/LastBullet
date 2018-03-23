@@ -12,8 +12,8 @@ public class PlayerModel : MonoBehaviour {
     public static string FIRE_BOTTOM = "FIRE_BOTTOM";
     public static string RELOAD = "RELOAD";
 
-    [HideInInspector]
-    public Animator animator;
+    
+    private Animator animator;
     private PlayerController playerController;
 
 	// Use this for initialization
@@ -28,5 +28,9 @@ public class PlayerModel : MonoBehaviour {
         } else {
             Debug.LogError("PlayerModel: PlayerController not found!");
         }
+    }
+
+    public void SetAnimatorBool(string parameter, bool value) {
+        animator.SetBool(parameter, value);
     }
 }

@@ -6,32 +6,39 @@ public class FireTopState: AbstractState {
 
     private bool animationFinished = false;
 
-    public override void OnEnter(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+    public FireTopState(PlayerController playerController) : base(playerController) {
+    }
+
+    public override void OnEnter() {
         Debug.Log("FireBottomState OnEnter");
 
         if (playerController.gun.HasAmmunition()) {
-            playerModel.animator.SetBool(PlayerModel.FIRE_TOP, true);
-            gunModel.animator.SetBool(GunModel.FIRE_TOP, true);
+            playerController.playerModel.SetAnimatorBool(PlayerModel.FIRE_TOP, true);
+            playerController.gunModel.SetAnimatorBool(GunModel.FIRE_TOP, true);
         } else {
             animationFinished = true;
         }
         playerController.gun.FireGun(playerController.currentDirectionX);
     }
 
-    public override AbstractState UpdateState(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-
+    public override AbstractState UpdateState() {
         if (animationFinished) {
-            return new IdleTopState(currentAction);
+            return new IdleTopState(currentAction, playerController);
         }
         return null;
     }
 
-    public override void OnExit(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-        playerModel.animator.SetBool(PlayerModel.FIRE_TOP, false);
-        gunModel.animator.SetBool(GunModel.FIRE_TOP, false);
+    public override void OnExit() {
+        playerController.playerModel.SetAnimatorBool(PlayerModel.FIRE_TOP, false);
+        playerController.gunModel.SetAnimatorBool(GunModel.FIRE_TOP, false);
+        playerController.gunModel.SetAnimatorBool(GunModel.FIRE_TOP_RELEASE, false);
     }
 
     public override void HandleAnimEvent(string parameter) {
-        animationFinished = true;
+        if (parameter == GunModel.ANIM_PARAM_FIRE_RELEASE) {
+            playerController.gunModel.SetAnimatorBool(GunModel.FIRE_TOP_RELEASE, true);
+        } else {
+            animationFinished = true;
+        }
     }
 }

@@ -4,15 +4,20 @@ using UnityEngine;
 
 public abstract class AbstractState {
 
-
+    public PlayerController playerController;
 
     public enum ACTION {NA, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT, RELOAD };
     public ACTION currentAction = ACTION.NA;
 
-    public abstract void OnEnter(PlayerController playerController, PlayerModel playerModel, GunModel gunModel);    
-    public abstract void OnExit(PlayerController playerController, PlayerModel playerModel, GunModel gunModel);
 
-    public virtual AbstractState UpdateState(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+    public AbstractState(PlayerController playerController) {
+        this.playerController = playerController;
+    }
+
+    public abstract void OnEnter();    
+    public abstract void OnExit();
+
+    public virtual AbstractState UpdateState() {
         // do nothing
         return null;
     }
@@ -25,7 +30,7 @@ public abstract class AbstractState {
         // do nothing
     }
 
-    public void UpdateDirectionX(PlayerController playerController) {
+    public void UpdateDirectionX() {
         if (currentAction == ACTION.TOP_LEFT || currentAction == ACTION.BOTTOM_LEFT) {
             playerController.SetDirectionX(-1);
         }

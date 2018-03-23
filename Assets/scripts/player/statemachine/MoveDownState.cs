@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class MoveDownState : AbstractState {
 
-    public MoveDownState(ACTION action) {
+    public MoveDownState(ACTION action, PlayerController playerController) : base(playerController) {
         currentAction = action;
     }
 
-    public override void OnEnter(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-        playerModel.animator.SetBool(PlayerModel.MOVE_DOWN, true);
-        gunModel.animator.SetBool(GunModel.MOVE_DOWN, true);
+    public override void OnEnter() {
+        playerController.playerModel.SetAnimatorBool(PlayerModel.MOVE_DOWN, true);
+        playerController.gunModel.SetAnimatorBool(GunModel.MOVE_DOWN, true);
         playerController.currentDirectionY = 0;
         playerController.MovePlayer(playerController.coordinates.bottom.position);
     }
 
-    public override AbstractState UpdateState(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
+    public override AbstractState UpdateState() {
 
         if (!playerController.isMoving) {
             if (playerController.gun.IsReady()) {
-                return new FireBottomState();
+                return new FireBottomState(playerController);
             } else {
-                return new IdleBottomState(currentAction);
+                return new IdleBottomState(currentAction, playerController);
             }
         }
         return null;
     }
 
 
-    public override void OnExit(PlayerController playerController, PlayerModel playerModel, GunModel gunModel) {
-        playerModel.animator.SetBool(PlayerModel.MOVE_DOWN, false);
-        gunModel.animator.SetBool(GunModel.MOVE_DOWN, false);
+    public override void OnExit() {
+        playerController.playerModel.SetAnimatorBool(PlayerModel.MOVE_DOWN, false);
+        playerController.gunModel.SetAnimatorBool(GunModel.MOVE_DOWN, false);
     }
 }

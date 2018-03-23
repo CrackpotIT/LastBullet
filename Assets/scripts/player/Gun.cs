@@ -17,24 +17,26 @@ public class Gun : MonoBehaviour {
     private int currentClip;
     private float lastShot = 0;
     private bool reloading = false;
-
-    private Inventory inventoryRefference;
+    
     private UiController uiController;
+
+    // nur providorisch! Muss später in StateMachine
+    private GunModel gunModel;
 
     private void Start() {
         currentClip = clipSize;
-        inventoryRefference = transform.parent.GetComponent<PlayerController>().inventory;
         uiController = GameObject.FindObjectOfType<UiController>();
-        uiController.RefreshBulletCount(currentClip, inventoryRefference.bullets[bullet.bulletType]);
+        uiController.RefreshBulletCount(currentClip, PlayerInventory.instance.bullets[bullet.bulletType]);
     }
 
     public bool HasAmmunition() {
         return currentClip > 0;
     }
 
-    public void Reload() {        
+    public void Reload(GunModel gunModel) {
+        this.gunModel = gunModel;
         // check if ammunition left or inventory empty
-        if (!reloading && inventoryRefference.bullets[bullet.bulletType] > 0) {
+        if (!reloading && PlayerInventory.instance.bullets[bullet.bulletType] > 0) {
             reloading = true;
             SoundManager.PlaySFX(gunReloadSound);
             Invoke("ReloadFinished", timeToReload);
@@ -63,9 +65,9 @@ public class Gun : MonoBehaviour {
                 // remove bullet from clip
                 currentClip--;
                 // remove bullet from inventory
-                inventoryRefference.bullets[bullet.bulletType]--;
+                PlayerInventory.instance.bullets[bullet.bulletType]--;
 
-                uiController.RefreshBulletCount(currentClip, inventoryRefference.bullets[bullet.bulletType]);
+                uiController.RefreshBulletCount(currentClip, PlayerInventory.instance.bullets[bullet.bulletType]);
                 return true;
             } else {
                 SoundManager.PlaySFX(gunEmptySound);
@@ -77,7 +79,7 @@ public class Gun : MonoBehaviour {
 
     private void ReloadFinished() {
         // get bullets from inventory
-        int bulletsInInventory = inventoryRefference.bullets[bullet.bulletType];
+        int bulletsInInventory = PlayerInventory.instance.bullets[bullet.bulletType];
 
         if (bulletsInInventory > clipSize) {
             currentClip = clipSize; // Full Clip reload
@@ -87,5 +89,6 @@ public class Gun : MonoBehaviour {
         
         uiController.RefreshBulletCount(currentClip, bulletsInInventory);
         reloading = false;
+        gunModel.ShowClipEmptyLayer(false);
     }
 }
