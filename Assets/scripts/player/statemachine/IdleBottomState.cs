@@ -9,9 +9,8 @@ public class IdleBottomState: AbstractState {
     }
     
     public override void OnEnter() {
-        playerController.playerModel.SetAnimatorBool(PlayerModel.IDLE_BOTTOM, true);
-        playerController.gunModel.SetAnimatorBool(GunModel.IDLE_BOTTOM, true);
-        playerController.currentDirectionY = -1;
+        playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_BOTTOM, true);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_BOTTOM, true);
     }
 
     public override AbstractState UpdateState() {
@@ -23,7 +22,7 @@ public class IdleBottomState: AbstractState {
 
         if (currentAction == ACTION.BOTTOM_LEFT || currentAction == ACTION.BOTTOM_RIGHT) {
             UpdateDirectionX();
-            if (playerController.gun.IsReady()) {
+            if (playerController.gunModel.PullTriggerReady()) {
                 return new FireBottomState(playerController);
             }            
         }
@@ -32,7 +31,7 @@ public class IdleBottomState: AbstractState {
     }
 
     public override void OnExit() {
-        playerController.playerModel.SetAnimatorBool(PlayerModel.IDLE_BOTTOM, false);
-        playerController.gunModel.SetAnimatorBool(GunModel.IDLE_BOTTOM, false);
+        playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_BOTTOM, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_BOTTOM, false);
     }
 }

@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: b5a76636dba79994095b5612a24463b7
-timeCreated: 1521232662
+guid: a4477e4a36c0d5742965d4c36073be32
+timeCreated: 1521847676
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 100
-  forceTextureCase: -2
+  fontSize: 50
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Commodore 64 Pixelized
+  fontName: 04b
   fontNames:
-  - Commodore 64 Pixelized
+  - 04b
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 2
-  ascentCalculationMode: 1
+  ascentCalculationMode: 2
   useLegacyBoundsCalculation: 0
   userData: 
   assetBundleName: 

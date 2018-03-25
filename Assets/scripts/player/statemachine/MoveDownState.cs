@@ -9,16 +9,15 @@ public class MoveDownState : AbstractState {
     }
 
     public override void OnEnter() {
-        playerController.playerModel.SetAnimatorBool(PlayerModel.MOVE_DOWN, true);
-        playerController.gunModel.SetAnimatorBool(GunModel.MOVE_DOWN, true);
-        playerController.currentDirectionY = 0;
+        playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, true);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, true);
         playerController.MovePlayer(playerController.coordinates.bottom.position);
     }
 
     public override AbstractState UpdateState() {
 
         if (!playerController.isMoving) {
-            if (playerController.gun.IsReady()) {
+            if (playerController.gunModel.PullTriggerReady()) {
                 return new FireBottomState(playerController);
             } else {
                 return new IdleBottomState(currentAction, playerController);
@@ -29,7 +28,7 @@ public class MoveDownState : AbstractState {
 
 
     public override void OnExit() {
-        playerController.playerModel.SetAnimatorBool(PlayerModel.MOVE_DOWN, false);
-        playerController.gunModel.SetAnimatorBool(GunModel.MOVE_DOWN, false);
+        playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, false);
     }
 }

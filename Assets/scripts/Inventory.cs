@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour {
+public class Inventory : MonoBehaviour {
 
-    public static PlayerInventory instance;
+    public static Inventory instance;
 
     public Dictionary<Bullet.BULLET_TYPE, int> bullets = new Dictionary<Bullet.BULLET_TYPE, int>();
         

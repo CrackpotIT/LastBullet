@@ -3,22 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    
-    public float gunPosTopX;
-    public float gunPosTopY;
-
-    public float gunPosBottomX;
-    public float gunPosBottomY;
 
 
     public float moveSpeed;
-    public Gun gun;
     public Coordinates coordinates;
     
     [HideInInspector]
     public int currentDirectionX = 1;  // 1=right, -1=left
-    [HideInInspector]
-    public int currentDirectionY = 1;  // 1=up, 0=moving, -1=down
     [HideInInspector]
     public bool isMoving = false;
 
@@ -29,16 +20,22 @@ public class PlayerController : MonoBehaviour {
     public PlayerModel playerModel;
 
     private void Awake() {
-        GameObject instance = Instantiate(Resources.Load("GunModel_SuckSour", typeof(GameObject))) as GameObject;
+
     }
 
     void Start() {
+        GameObject instance = Instantiate(Resources.Load("GunModel_SuckSour", typeof(GameObject))) as GameObject;
+        instance.transform.position = transform.position;
+        instance.transform.parent = transform;
+
+        gunModel = instance.GetComponent<GunModel>();
+
         SoundManager.SetGlobalVolume(.5f);
 
         currentState = new IdleTopState(AbstractState.ACTION.NA, this);
 
         // search model for player and gun
-        gunModel = transform.GetComponentInChildren<GunModel>();
+        //gunModel = transform.GetComponentInChildren<GunModel>();
         playerModel = transform.GetComponentInChildren<PlayerModel>();
     }
 
@@ -60,24 +57,20 @@ public class PlayerController : MonoBehaviour {
  
 
     public void EventTopLeft() {
-        gun.transform.localPosition = new Vector2(gunPosTopX, gunPosTopY);
         currentState.HandleEvent(AbstractState.ACTION.TOP_LEFT);
     }
 
     public void EventTopRight() {
-        gun.transform.localPosition = new Vector2(gunPosTopX, gunPosTopY);
         currentState.HandleEvent(AbstractState.ACTION.TOP_RIGHT);
     }
     public void EventBottomLeft() {
-        gun.transform.localPosition = new Vector2(gunPosBottomX, gunPosBottomY);
         currentState.HandleEvent(AbstractState.ACTION.BOTTOM_LEFT);
     }
     public void EventBottomRight() {
-        gun.transform.localPosition = new Vector2(gunPosBottomX, gunPosBottomY);
         currentState.HandleEvent(AbstractState.ACTION.BOTTOM_RIGHT);
     }
     public void EventReload() {
-        gun.Reload(gunModel);
+        gunModel.Reload(gunModel);
     }
 
 

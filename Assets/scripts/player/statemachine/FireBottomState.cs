@@ -10,13 +10,13 @@ public class FireBottomState: AbstractState {
     }
 
     public override void OnEnter() {
-        if (playerController.gun.HasAmmunition()) {
-            playerController.playerModel.SetAnimatorBool(PlayerModel.FIRE_BOTTOM, true);
-            playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM, true);
+        if (playerController.gunModel.HasAmmunition()) {
+            playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_BOTTOM, true);
+            playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_BOTTOM, true);
         } else {
             animationFinished = true;
         }
-        playerController.gun.FireGun(playerController.currentDirectionX);
+        playerController.gunModel.FireGun(playerController.currentDirectionX, false);
     }
 
     public override AbstractState UpdateState() {
@@ -28,14 +28,14 @@ public class FireBottomState: AbstractState {
     }
 
     public override void OnExit() {
-        playerController.playerModel.SetAnimatorBool(PlayerModel.FIRE_BOTTOM, false);
-        playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM, false);
-        playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM_RELEASE, false);
+        playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_BOTTOM, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_BOTTOM, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_BOTTOM_RELEASE, false);
     }
 
     public override void HandleAnimEvent(string parameter) {
-        if (parameter == GunModel.ANIM_PARAM_FIRE_RELEASE) {
-            playerController.gunModel.SetAnimatorBool(GunModel.FIRE_BOTTOM_RELEASE, true);
+        if (parameter == AbstractModel.ANIM_EVENT_PARAMS.FIRE_RELEASE.ToString()) {
+            playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_BOTTOM_RELEASE, true);
         } else {
             animationFinished = true;
         }

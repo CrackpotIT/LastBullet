@@ -7,7 +7,7 @@ public class Cam : MonoBehaviour {
     const float TEXTURE_SIZE = 25f;
 	private float lastHeight = 0;
 
-    public RectTransform displayCanvas;
+    //public RectTransform displayCanvas;
 
     // Use this for initialization
     void Start () {
@@ -44,6 +44,7 @@ public class Cam : MonoBehaviour {
 
             Camera.main.orthographicSize = erg;
 
+            /*
             float ergDoubled = erg * 2;
             float newHeight = ergDoubled / displayCanvas.localScale.y;
             float newWidth = ((ergDoubled * Screen.width )/ Screen.height) / displayCanvas.localScale.x;
@@ -55,7 +56,8 @@ public class Cam : MonoBehaviour {
             displayCanvas.sizeDelta = v;
             //Debug.Log(cs.sizeDelta.x + "/" + cs.sizeDelta.y + "- scale:" + scale + "t: " + Camera.main.pixelRect.height + " - " + cs.localScale.y);
 
-            
+            */
+
         }
     }
 	
