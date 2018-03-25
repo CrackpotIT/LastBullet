@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Start() {
-        GameObject instance = Instantiate(Resources.Load("GunModel_SuckSour", typeof(GameObject))) as GameObject;
+        GameObject instance = Instantiate(Resources.Load("player/weapons/GunModel_SuckSour", typeof(GameObject))) as GameObject;
         instance.transform.position = transform.position;
         instance.transform.parent = transform;
 

@@ -12,13 +12,13 @@ public class GunModel : AbstractModel {
     private int currentClip;
     private float lastShot = 0;
     private bool reloading = false;
-    private UiController uiController;
+    private GuiController uiController;
 
 
     public override void Start() {
         base.Start();
         currentClip = gunStruct.clipSize;
-        uiController = GameObject.FindObjectOfType<UiController>();
+        uiController = GameObject.FindObjectOfType<GuiController>();
         uiController.RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
     }
 

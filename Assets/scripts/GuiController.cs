@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UiController : MonoBehaviour {
+public class GuiController : MonoBehaviour {
 
-    private TextMesh bulletText;
+    public GameObject background;
+    public GameObject bulletText;
+    
 
 	// Use this for initialization
 	void Start () {
-        bulletText = GetComponent<TextMesh>();
-
-        var v3Pos = new Vector3(1.0f, 1.0f, 10f);
-        transform.position = Camera.main.ViewportToWorldPoint(v3Pos);
     }
 
-    private void Update() {
+    public void RefreshPositions() {
         var v3Pos = new Vector3(1.0f, 1.0f, 10f);
-        transform.position = Camera.main.ViewportToWorldPoint(v3Pos);
+        bulletText.transform.position = Camera.main.ViewportToWorldPoint(v3Pos);
+
+        v3Pos = new Vector3(0.5f, 1.0f, 15f);
+        background.transform.position = Camera.main.ViewportToWorldPoint(v3Pos);
     }
 
     public void RefreshBulletCount(int clip, int inventory) {
@@ -34,6 +35,7 @@ public class UiController : MonoBehaviour {
             inventoryTextToDisplay = "0" + inventoryTextToDisplay;
         }
 
-        bulletText.text = clipTextToDisplay + "/" + inventoryTextToDisplay;
+
+        bulletText.GetComponent<TextMesh>().text = clipTextToDisplay + "/" + inventoryTextToDisplay;
     }
 }

@@ -172,6 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackerPrefabArray:
   - {fileID: 1431303814050352, guid: 61ef60d01f875814b811390b1b850cb0, type: 2}
+  everySecondsArray: []
+  minTimeBetweenSpawns: 0
 --- !u!114 &114578805687363952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackerPrefabArray:
   - {fileID: 1431303814050352, guid: 61ef60d01f875814b811390b1b850cb0, type: 2}
+  everySecondsArray: []
+  minTimeBetweenSpawns: 0
 --- !u!114 &114707134175807402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,6 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackerPrefabArray:
   - {fileID: 1496802095117860, guid: 847545de1ed03d34cb5c5e6e946290dc, type: 2}
+  everySecondsArray: []
+  minTimeBetweenSpawns: 0
 --- !u!114 &114801902908129456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,3 +217,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackerPrefabArray:
   - {fileID: 1431303814050352, guid: 61ef60d01f875814b811390b1b850cb0, type: 2}
+  everySecondsArray: []
+  minTimeBetweenSpawns: 0
