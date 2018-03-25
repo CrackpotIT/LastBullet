@@ -82,7 +82,7 @@ AnimatorController:
       m_Motion: {fileID: 7400000, guid: dde2dc522c1e9814cb58c87054e7efd4, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102366140880831826}
-      m_Motion: {fileID: 7400000, guid: dd1d2106c41a0694f9ecb7dd4f116f00, type: 2}
+      m_Motion: {fileID: 7400000, guid: 23f13d21e60a0bc41a2bd7e858ff14c8, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102056318984919270}
       m_Motion: {fileID: 7400000, guid: 6e22d509b4eb40f4fbc94f5c2000d777, type: 2}
@@ -91,7 +91,7 @@ AnimatorController:
       m_Motion: {fileID: 7400000, guid: af9ac6b3114ab9f4badc3ce00504e55f, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102769235426099122}
-      m_Motion: {fileID: 7400000, guid: 4ebe40b5aabe23b41a10ce6759e8aef2, type: 2}
+      m_Motion: {fileID: 7400000, guid: 23f13d21e60a0bc41a2bd7e858ff14c8, type: 2}
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: 0
@@ -542,7 +542,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MoveDown
-  m_Speed: 1
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101144209862240276}
@@ -556,7 +556,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c61ac86f41ab77947b856389ac24c278, type: 2}
+  m_Motion: {fileID: 7400000, guid: a7d0ca94bb2e86b4b8cac9f7ea2658a0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -583,7 +583,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1941117e36f907443b8b61f117704975, type: 2}
+  m_Motion: {fileID: 7400000, guid: a7d0ca94bb2e86b4b8cac9f7ea2658a0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

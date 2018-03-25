@@ -400,10 +400,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  seenEverySeconds: 0.5
   targetPosition: {x: 0, y: 0}
   directionX: 0
-  offSetY: 0.9
+  offSetY: -0.3
   damping: 0.5
 --- !u!114 &114833131330331694
 MonoBehaviour:
