@@ -10,23 +10,24 @@ public class Bullet : MonoBehaviour {
     public float damage;
     public bool destroyed = false;
 
-    private float speed;       
-    private Vector3 vector;
+    private float speed;   
+    private int directionX;
+    private Rigidbody2D rigidb;
+
+    private void Start() {
+       rigidb = GetComponent<Rigidbody2D>();
+    }
 
     public void InitBullet(float speed, float gunDamage, int directionX) {
         this.speed = speed;
         this.damage += gunDamage;
-
-        if (directionX > 0) {
-            this.vector = Vector3.right;            
-        }
-        if (directionX < 0) {
-            this.vector = Vector3.left;
-        }
+        this.directionX = directionX;
         transform.localScale = new Vector2(directionX, transform.localScale.y);
     }
 	
 	void Update () {
-        transform.Translate(vector * speed * Time.deltaTime);
+        Vector2 v = new Vector2(transform.position.x + (directionX * speed * Time.deltaTime), transform.position.y);
+        rigidb.MovePosition(v);
+        //transform.Translate(vector * speed * Time.deltaTime);
 	}
 }

@@ -136,7 +136,7 @@ MonoBehaviour:
     timeBetweenShots: 0.5
     timeToReload: 1.5
     damageModifier: 0
-    bulletSpeed: 25
+    bulletSpeed: 30
     bullet: {fileID: 114453691313324992, guid: ba5ee39adbad6ba47a6535dbd5fc0edb, type: 2}
     clipSize: 12
     gunShotSound: {fileID: 8300000, guid: eeb04ff8d5e105749b6814646ab04a69, type: 3}
