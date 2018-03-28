@@ -34,14 +34,6 @@ public class Cam : MonoBehaviour {
 
             float scaleN = Mathf.Max(Mathf.Round(Screen.height / 260f), 2);  // min scale is 2
             Debug.Log("ScaleNew: " + (Screen.height / 260f) + "-" + scaleN);
-
-            float scale = 4f;
-            if (Screen.height < 1080) {
-                scale = 3f;
-            }
-            if (Screen.height < 512) {
-                scale = 2f;
-            }
             
             float erg = (Screen.height / (TEXTURE_SIZE * 2f)) / scaleN;
 
