@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Can : MonoBehaviour {
+public class MovingAim : AbstractEnemyController {
 
+    public float speed;
+    public bool moveUp;
     public GameObject sparkEmitter;
     public AudioClip hitSound;
-    private Animator anim;
-    private bool destroyed = false;
-    private float directionX;
 
-    void Start() {
-        anim = GetComponent<Animator>();
-        directionX = transform.parent.transform.localScale.x;
+    private Rigidbody2D rigidb;
+
+
+    // Use this for initialization
+    void Start () {
+        rigidb = GetComponent<Rigidbody2D>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        float directionY = (moveUp ? 1 : -1);
+        Vector2 v = new Vector2(transform.position.x , transform.position.y +(directionY * speed * Time.deltaTime));
+        rigidb.MovePosition(v);
     }
 
-    void Update() {
-        if (destroyed) {
-            transform.Translate(new Vector3(directionX  * 3,1,0) * 6 * Time.deltaTime);
-        }
-    }
 
     void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Bullet") {
@@ -27,11 +31,7 @@ public class Can : MonoBehaviour {
             if (!bullet.destroyed) {
                 // play sound
                 SoundManager.PlaySFX(hitSound);
-                // destroy can
-                anim.SetBool("ROTATE", true);
                 transform.parent = null;
-                //boxCollider.enabled = false;
-                destroyed = true;
 
                 Quaternion q = new Quaternion(transform.rotation.x, (directionX == -1 ? transform.rotation.y - 180 : transform.rotation.y), transform.rotation.z, transform.rotation.w);
                 Instantiate(sparkEmitter, transform.position, q);
@@ -39,6 +39,7 @@ public class Can : MonoBehaviour {
             bullet.destroyed = true;
             // Destroy bullet
             Destroy(coll.gameObject);
+            Destroy(gameObject);
         }
     }
 

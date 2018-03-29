@@ -387,6 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e245003e0c361442a7ff9f2e55b786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sparkEmitter: {fileID: 1036637142665286, guid: 45b09f6f789c3fb40a94e030c37b553d,
+    type: 2}
   hitSound: {fileID: 8300000, guid: 4d3e5a411ba8b3d4996633d21b4bed03, type: 3}
 --- !u!114 &114619261449003056
 MonoBehaviour:
@@ -415,6 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e245003e0c361442a7ff9f2e55b786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sparkEmitter: {fileID: 1036637142665286, guid: 45b09f6f789c3fb40a94e030c37b553d,
+    type: 2}
   hitSound: {fileID: 8300000, guid: 4d3e5a411ba8b3d4996633d21b4bed03, type: 3}
 --- !u!114 &114906865019345738
 MonoBehaviour:
@@ -427,6 +431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e245003e0c361442a7ff9f2e55b786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sparkEmitter: {fileID: 1036637142665286, guid: 45b09f6f789c3fb40a94e030c37b553d,
+    type: 2}
   hitSound: {fileID: 8300000, guid: 4d3e5a411ba8b3d4996633d21b4bed03, type: 3}
 --- !u!212 &212152274315595868
 SpriteRenderer:
