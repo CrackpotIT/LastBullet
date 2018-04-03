@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614965849572470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85, y: 0.64, z: 0}
+  m_LocalPosition: {x: 0.85, y: 0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4633836858244196}
@@ -94,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733802566910524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85, y: 0.12, z: 0}
+  m_LocalPosition: {x: 0.85, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4633836858244196}
@@ -132,6 +132,9 @@ MonoBehaviour:
   playerController: {fileID: 0}
   muzzlePositionTop: {fileID: 4163122834507850}
   muzzlePositionBottom: {fileID: 4863066293273752}
+  shellBounce: {fileID: 1592478506807722, guid: d2672c5927f91654283585b2e55caea7,
+    type: 2}
+  shellBounceOffsetX: 0
   gunStruct:
     timeBetweenShots: 0.5
     timeToReload: 1.5
@@ -184,5 +187,5 @@ SpriteRenderer:
   m_Size: {x: 3.2, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0

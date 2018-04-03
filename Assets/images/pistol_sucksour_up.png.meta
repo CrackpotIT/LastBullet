@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 61b7ad65f5c47284ea6c6737fcea1b04
-timeCreated: 1521825957
+timeCreated: 1522782731
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,11 @@ TextureImporter:
     21300004: pistol_up_2
     21300006: pistol_up_3
     21300008: pistol_up_4
+    21300010: pistol_sucksour_up_0
+    21300012: pistol_sucksour_up_1
+    21300014: pistol_sucksour_up_2
+    21300016: pistol_sucksour_up_3
+    21300018: pistol_sucksour_up_4
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -105,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pistol_up_0
+      name: pistol_sucksour_up_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,13 +124,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pistol_up_1
+      name: pistol_sucksour_up_1
       rect:
         serializedVersion: 2
         x: 80
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,13 +138,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pistol_up_2
+      name: pistol_sucksour_up_2
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,13 +152,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pistol_up_3
+      name: pistol_sucksour_up_3
       rect:
         serializedVersion: 2
         x: 240
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,13 +166,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: pistol_up_4
+      name: pistol_sucksour_up_4
       rect:
         serializedVersion: 2
         x: 320
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingAim : AbstractEnemyController {
-
-    public float speed;
+    
     public bool moveUp;
     public GameObject sparkEmitter;
     public AudioClip hitSound;
@@ -20,7 +19,7 @@ public class MovingAim : AbstractEnemyController {
 	// Update is called once per frame
 	void Update () {
         float directionY = (moveUp ? 1 : -1);
-        Vector2 v = new Vector2(transform.position.x , transform.position.y +(directionY * speed * Time.deltaTime));
+        Vector2 v = new Vector2(transform.position.x - (directionX * moveSpeed * 0.2f * Time.deltaTime), transform.position.y +(directionY * moveSpeed * Time.deltaTime));
         rigidb.MovePosition(v);
     }
 

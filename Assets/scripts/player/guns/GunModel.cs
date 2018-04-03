@@ -6,6 +6,8 @@ public class GunModel : AbstractModel {
 
     public Transform muzzlePositionTop;
     public Transform muzzlePositionBottom;
+    public GameObject shellBounce;
+    public float shellBounceOffsetX;
 
     public GunStruct gunStruct;
 
@@ -85,6 +87,11 @@ public class GunModel : AbstractModel {
                 Transform transformToUser = (topPosition ? muzzlePositionTop : muzzlePositionBottom);
                 Bullet newBullet = Instantiate(gunStruct.bullet, transformToUser.position, transformToUser.rotation);
                 newBullet.InitBullet(gunStruct.bulletSpeed, gunStruct.damageModifier, directionX);
+
+                GameObject shellBounceInstance = Instantiate(shellBounce, transform.position, transform.rotation);
+                Vector3 shellScale = shellBounceInstance.transform.localScale;
+                shellBounceInstance.transform.localScale = new Vector3(directionX * shellScale.x, shellScale.y, shellScale.z);
+                shellBounceInstance.transform.parent = null;
 
                 // remove bullet from clip
                 currentClip--;

@@ -99,10 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d4429b06fc89b48839dae1d37ad463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 3
   targetPosition: {x: 0, y: 0}
   directionX: 1
-  speed: 2
   moveUp: 0
   sparkEmitter: {fileID: 1180366017802572, guid: 3fd846ca7285d53489ad4ea35b659b0e,
     type: 2}
