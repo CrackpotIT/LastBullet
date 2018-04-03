@@ -6,22 +6,33 @@ public class GunModel : AbstractModel {
 
     public Transform muzzlePositionTop;
     public Transform muzzlePositionBottom;
-    public GameObject shellBounce;
+    
     public float shellBounceOffsetX;
 
     public GunStruct gunStruct;
 
+    private GameObject[] shellBounceUpArray;
+    private GameObject[] shellBounceDownArray;
+
     private int currentClip;
     private float lastShot = 0;
     private bool reloading = false;
-    private GuiController uiController;
 
 
     public override void Start() {
         base.Start();
         currentClip = gunStruct.clipSize;
-        uiController = GameObject.FindObjectOfType<GuiController>();
-        uiController.RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
+        GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
+
+        shellBounceUpArray = new GameObject[3];
+        shellBounceUpArray[0] = (GameObject)Resources.Load("player/weapons/ShellBounceUp1");
+        shellBounceUpArray[1] = (GameObject)Resources.Load("player/weapons/ShellBounceUp2");
+        shellBounceUpArray[2] = (GameObject)Resources.Load("player/weapons/ShellBounceUp3");
+
+        shellBounceDownArray = new GameObject[3];
+        shellBounceDownArray[0] = (GameObject)Resources.Load("player/weapons/ShellBounceDown1");
+        shellBounceDownArray[1] = (GameObject)Resources.Load("player/weapons/ShellBounceDown2");
+        shellBounceDownArray[2] = (GameObject)Resources.Load("player/weapons/ShellBounceDown3");
     }
 
     public override void SetAnimatorBool(ANIM_PARAMS parameter, bool value) {
@@ -73,7 +84,7 @@ public class GunModel : AbstractModel {
             currentClip += bulletsInInventory; // not enough bullets for full clip
         }
 
-        uiController.RefreshBulletCount(currentClip, bulletsInInventory);
+        GuiController.GetInstance().RefreshBulletCount(currentClip, bulletsInInventory);
         reloading = false;
         ShowClipEmptyLayer(false);
     }
@@ -88,17 +99,15 @@ public class GunModel : AbstractModel {
                 Bullet newBullet = Instantiate(gunStruct.bullet, transformToUser.position, transformToUser.rotation);
                 newBullet.InitBullet(gunStruct.bulletSpeed, gunStruct.damageModifier, directionX);
 
-                GameObject shellBounceInstance = Instantiate(shellBounce, transform.position, transform.rotation);
-                Vector3 shellScale = shellBounceInstance.transform.localScale;
-                shellBounceInstance.transform.localScale = new Vector3(directionX * shellScale.x, shellScale.y, shellScale.z);
-                shellBounceInstance.transform.parent = null;
+                // Create empty shell
+                ThrowShell(directionX, topPosition);
 
                 // remove bullet from clip
                 currentClip--;
                 // remove bullet from inventory
                 Inventory.instance.bullets[gunStruct.bullet.bulletType]--;
 
-                uiController.RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
+                GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
                 return true;
             } else {
                 SoundManager.PlaySFX(gunStruct.gunEmptySound);
@@ -106,5 +115,16 @@ public class GunModel : AbstractModel {
             }
         }
         return false;
+    }
+
+
+    private void ThrowShell(int directionX, bool topPosition) {
+        int random = Random.Range(0, 3);
+        Debug.Log("Random: " + random);
+        GameObject[] shellBounceArray = (topPosition ? shellBounceUpArray : shellBounceDownArray);
+        GameObject shellBounceInstance = Instantiate(shellBounceArray[random], transform.position, transform.rotation);
+        Vector3 shellScale = shellBounceInstance.transform.localScale;
+        shellBounceInstance.transform.localScale = new Vector3(directionX * shellScale.x, shellScale.y, shellScale.z);
+        shellBounceInstance.transform.parent = null;
     }
 }

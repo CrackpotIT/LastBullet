@@ -1,29 +1,30 @@
 fileFormatVersion: 2
-guid: 3bfe85c23d9cecd4eaf2e85ebc2519d5
-timeCreated: 1522780177
+guid: df90edbc4ae9fa649a0ab2670dfef8cd
+timeCreated: 1522785362
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: shell_bounce_up_3_0
-    21300002: shell_bounce_up_3_1
-    21300004: shell_bounce_up_3_2
-    21300006: shell_bounce_up_3_3
-    21300008: shell_bounce_up_3_4
-    21300010: shell_bounce_up_3_5
-    21300012: shell_bounce_up_3_6
-    21300014: shell_bounce_up_3_7
-    21300016: shell_bounce_up_3_8
-    21300018: shell_bounce_up_3_9
-    21300020: shell_bounce_up_3_10
-    21300022: shell_bounce_up_3_11
-    21300024: shell_bounce_up_3_12
-    21300026: shell_bounce_up_3_13
-    21300028: shell_bounce_up_3_14
-    21300030: shell_bounce_up_3_15
-    21300032: shell_bounce_up_3_16
-    21300034: shell_bounce_up_3_17
-    21300036: shell_bounce_up_3_18
-    21300038: shell_bounce_up_3_19
+    21300000: shell_bounce_up_1_0
+    21300002: shell_bounce_up_1_1
+    21300004: shell_bounce_up_1_2
+    21300006: shell_bounce_up_1_3
+    21300008: shell_bounce_up_1_4
+    21300010: shell_bounce_up_1_5
+    21300012: shell_bounce_up_1_6
+    21300014: shell_bounce_up_1_7
+    21300016: shell_bounce_up_1_8
+    21300018: shell_bounce_up_1_9
+    21300020: shell_bounce_up_1_10
+    21300022: shell_bounce_up_1_11
+    21300024: shell_bounce_up_1_12
+    21300026: shell_bounce_up_1_13
+    21300028: shell_bounce_up_1_14
+    21300030: shell_bounce_up_1_15
+    21300032: shell_bounce_up_1_16
+    21300034: shell_bounce_up_1_17
+    21300036: shell_bounce_up_1_18
+    21300038: shell_bounce_up_1_19
+    21300040: shell_bounce_up_1_20
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -120,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shell_bounce_up_3_0
+      name: shell_bounce_up_1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,13 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_1
+      name: shell_bounce_up_1_1
       rect:
         serializedVersion: 2
         x: 80
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,13 +149,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_2
+      name: shell_bounce_up_1_2
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,13 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_3
+      name: shell_bounce_up_1_3
       rect:
         serializedVersion: 2
         x: 240
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,13 +177,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_4
+      name: shell_bounce_up_1_4
       rect:
         serializedVersion: 2
         x: 320
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,13 +191,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_5
+      name: shell_bounce_up_1_5
       rect:
         serializedVersion: 2
         x: 400
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,13 +205,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_6
+      name: shell_bounce_up_1_6
       rect:
         serializedVersion: 2
         x: 480
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,13 +219,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_7
+      name: shell_bounce_up_1_7
       rect:
         serializedVersion: 2
         x: 560
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,13 +233,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_8
+      name: shell_bounce_up_1_8
       rect:
         serializedVersion: 2
         x: 640
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,13 +247,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_9
+      name: shell_bounce_up_1_9
       rect:
         serializedVersion: 2
         x: 720
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,13 +261,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_10
+      name: shell_bounce_up_1_10
       rect:
         serializedVersion: 2
         x: 800
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,13 +275,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_11
+      name: shell_bounce_up_1_11
       rect:
         serializedVersion: 2
         x: 880
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,13 +289,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_12
+      name: shell_bounce_up_1_12
       rect:
         serializedVersion: 2
         x: 960
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,13 +303,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_13
+      name: shell_bounce_up_1_13
       rect:
         serializedVersion: 2
         x: 1040
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,13 +317,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_14
+      name: shell_bounce_up_1_14
       rect:
         serializedVersion: 2
         x: 1120
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,13 +331,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_15
+      name: shell_bounce_up_1_15
       rect:
         serializedVersion: 2
         x: 1200
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,13 +345,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_16
+      name: shell_bounce_up_1_16
       rect:
         serializedVersion: 2
         x: 1280
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,13 +359,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_17
+      name: shell_bounce_up_1_17
       rect:
         serializedVersion: 2
         x: 1360
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,13 +373,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_18
+      name: shell_bounce_up_1_18
       rect:
         serializedVersion: 2
         x: 1440
         y: 0
         width: 80
-        height: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,13 +387,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shell_bounce_up_3_19
+      name: shell_bounce_up_1_19
       rect:
         serializedVersion: 2
         x: 1520
         y: 0
         width: 80
-        height: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: shell_bounce_up_1_20
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 80
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

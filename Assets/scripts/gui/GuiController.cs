@@ -13,15 +13,23 @@ public class GuiController : MonoBehaviour {
     public PixelArtDisplayCounter timer;
 
 
-    // Use this for initialization
-    void Start () {
-        
+    // Static instance
+    static GuiController _instance;
+
+    private void Start() {
+        _instance = this;
     }
 
-    private void Update() {
-        
-        
+
+    public static GuiController GetInstance() {
+        if (!_instance) {
+            Debug.LogError("GuiController Error, instance is null!");
+            return null;
+        }
+        return _instance;
     }
+
+
 
     public void RefreshPositions() {
         SetGUIPosition(background, 0.5f, 1.0f, 0, 0);

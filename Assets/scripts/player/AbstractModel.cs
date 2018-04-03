@@ -11,11 +11,14 @@ public abstract class AbstractModel : MonoBehaviour {
     public Animator animator;
     [HideInInspector]
     public PlayerController playerController;
+    [HideInInspector]
+    public SpriteRenderer spriteRenderer;
 
 
     public virtual void Start () {
         animator = GetComponent<Animator>();
         playerController = transform.parent.GetComponent<PlayerController>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void AnimationEvent(string param) {

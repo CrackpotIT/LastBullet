@@ -13,8 +13,6 @@ public class Timer : MonoBehaviour {
     void Start () {
         displayCounter = GetComponent<PixelArtDisplayCounter>();
         timer = startSeconds;
-
-        Debug.Log(Mathf.RoundToInt(Time.timeSinceLevelLoad));
     }
 	
 	// Update is called once per frame

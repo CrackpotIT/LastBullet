@@ -130,10 +130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   playerController: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   muzzlePositionTop: {fileID: 4163122834507850}
   muzzlePositionBottom: {fileID: 4863066293273752}
-  shellBounce: {fileID: 1592478506807722, guid: d2672c5927f91654283585b2e55caea7,
-    type: 2}
   shellBounceOffsetX: 0
   gunStruct:
     timeBetweenShots: 0.5
@@ -178,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 61b7ad65f5c47284ea6c6737fcea1b04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

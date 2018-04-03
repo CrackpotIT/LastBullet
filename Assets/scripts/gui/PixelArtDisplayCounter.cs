@@ -12,15 +12,11 @@ public class PixelArtDisplayCounter : MonoBehaviour {
 
 
     public void RefreshDisplay(string text) {
-        Debug.Log(text);
         // zuerst alte Darstellung löschen
-        Debug.Log("ChildCount0:" + transform.childCount);
         int childs = transform.childCount;
         for (int i = 0; i < childs; i++) {            
             DestroyImmediate(transform.GetChild(0).gameObject);
-            Debug.Log("Destroyed " +i);
         }
-        Debug.Log("ChildCount1:" + transform.childCount);
 
         if (writeToLeft) {
             for (int i = text.Length - 1; i >= 0; i--) {
@@ -33,8 +29,6 @@ public class PixelArtDisplayCounter : MonoBehaviour {
                 CreateNumberSprite(spriteNumberArray[value], i+1);
             }
         }
-
-        Debug.Log("ChildCount2:" + transform.childCount);
     }
 
     private int CalculateArrayIndex(char c) {
