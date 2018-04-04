@@ -22,32 +22,22 @@ public class MovingAim : AbstractEnemyController {
         Vector2 v = new Vector2(transform.position.x - (directionX * moveSpeed * 0.2f * Time.deltaTime), transform.position.y +(directionY * moveSpeed * Time.deltaTime));
         rigidb.MovePosition(v);
     }
+    
 
+    public override void DestroyEvent() {
+        // play sound
+        SoundManager.PlaySFX(hitSound);
+        transform.parent = null;
 
-    void OnCollisionEnter2D(Collision2D coll) {
-        if (coll.gameObject.tag == "Bullet") {
-            Bullet bullet = coll.gameObject.GetComponent<Bullet>();
-            if (!bullet.destroyed) {
-                // play sound
-                SoundManager.PlaySFX(hitSound);
-                transform.parent = null;
+        Quaternion q = new Quaternion(transform.rotation.x, (directionX == -1 ? transform.rotation.y - 180 : transform.rotation.y), transform.rotation.z, transform.rotation.w);
+        Instantiate(sparkEmitter, transform.position, q);
 
-                Quaternion q = new Quaternion(transform.rotation.x, (directionX == -1 ? transform.rotation.y - 180 : transform.rotation.y), transform.rotation.z, transform.rotation.w);
-                Instantiate(sparkEmitter, transform.position, q);
-            }
-            bullet.destroyed = true;
-            // Destroy bullet
-            Destroy(coll.gameObject);
-            Destroy(gameObject);
-        }
+        // shake Camera
+        CameraShake.GetInstance().StartShake(.1f, .2f);
+        Destroy(gameObject);
     }
 
-    void OnCollisionExit2D(Collision2D coll) {
-        if (coll.gameObject.tag == "Bullet") {
-            Bullet bullet = coll.gameObject.GetComponent<Bullet>();
-            bullet.destroyed = true;
-            // Destroy bullet
-            Destroy(coll.gameObject);
-        }
+    public override void DamageEvent() {
+        Debug.Log("Damage Moving Aim TODO");
     }
 }

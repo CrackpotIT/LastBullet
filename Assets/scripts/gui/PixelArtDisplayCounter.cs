@@ -13,9 +13,8 @@ public class PixelArtDisplayCounter : MonoBehaviour {
 
     public void RefreshDisplay(string text) {
         // zuerst alte Darstellung löschen
-        int childs = transform.childCount;
-        for (int i = 0; i < childs; i++) {            
-            DestroyImmediate(transform.GetChild(0).gameObject);
+        foreach (Transform child in transform) {
+            GameObject.Destroy(child.gameObject);
         }
 
         if (writeToLeft) {

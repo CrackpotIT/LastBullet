@@ -28,5 +28,12 @@ public class ZombieController : AbstractEnemyController {
     public void Damaged() {
         lastTimeDamaged = Time.time;
     }
-    
+
+    public override void DestroyEvent() {
+        throw new System.NotImplementedException();
+    }
+
+    public override void DamageEvent() {
+        throw new System.NotImplementedException();
+    }
 }

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Can : MonoBehaviour {
+public class Can : AbstractEnemyController {
 
     public GameObject sparkEmitter;
     public AudioClip hitSound;
     private Animator anim;
     private bool destroyed = false;
-    private float directionX;
 
     void Start() {
         anim = GetComponent<Animator>();
@@ -20,34 +19,25 @@ public class Can : MonoBehaviour {
             transform.Translate(new Vector3(directionX  * 3,1,0) * 6 * Time.deltaTime);
         }
     }
+    
 
-    void OnCollisionEnter2D(Collision2D coll) {
-        if (coll.gameObject.tag == "Bullet") {
-            Bullet bullet = coll.gameObject.GetComponent<Bullet>();
-            if (!bullet.destroyed) {
-                // play sound
-                SoundManager.PlaySFX(hitSound);
-                // destroy can
-                anim.SetBool("ROTATE", true);
-                transform.parent = null;
-                //boxCollider.enabled = false;
-                destroyed = true;
-
-                Quaternion q = new Quaternion(transform.rotation.x, (directionX == -1 ? transform.rotation.y - 180 : transform.rotation.y), transform.rotation.z, transform.rotation.w);
-                Instantiate(sparkEmitter, transform.position, q);
-            }
-            bullet.destroyed = true;
-            // Destroy bullet
-            Destroy(coll.gameObject);
-        }
+    public override void DestroyEvent() {
+        // play sound
+        SoundManager.PlaySFX(hitSound);
+        // destroy can
+        anim.SetBool("ROTATE", true);
+        transform.parent = null;
+        destroyed = true;
+        // instanciate sparkEmitter
+        Quaternion q = new Quaternion(transform.rotation.x, (directionX == -1 ? transform.rotation.y - 180 : transform.rotation.y), transform.rotation.z, transform.rotation.w);
+        Instantiate(sparkEmitter, transform.position, q);
     }
 
-    void OnCollisionExit2D(Collision2D coll) {
-        if (coll.gameObject.tag == "Bullet") {
-            Bullet bullet = coll.gameObject.GetComponent<Bullet>();
-            bullet.destroyed = true;
-            // Destroy bullet
-            Destroy(coll.gameObject);
-        }
+    public override void DamageEvent() {
+        // play sound
+        SoundManager.PlaySFX(hitSound);
+        // instanciate sparkEmitter
+        Quaternion q = new Quaternion(transform.rotation.x, (directionX == -1 ? transform.rotation.y - 180 : transform.rotation.y), transform.rotation.z, transform.rotation.w);
+        Instantiate(sparkEmitter, transform.position, q);
     }
 }

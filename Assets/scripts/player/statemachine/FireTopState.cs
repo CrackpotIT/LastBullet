@@ -10,8 +10,6 @@ public class FireTopState: AbstractState {
     }
 
     public override void OnEnter() {
-        Debug.Log("FireBottomState OnEnter");
-
         if (playerController.gunModel.HasAmmunition()) {
             playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP, true);
             playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP, true);

@@ -23,10 +23,7 @@ public class Spawner : MonoBehaviour {
 	}
 	
 	void Spawn(GameObject thisAttacker) {
-		GameObject newAttacker = (GameObject)Instantiate(thisAttacker);
-        Debug.Log("Instantiated");
-        newAttacker.transform.parent = transform;
-		newAttacker.transform.position = transform.position;
+		GameObject newAttacker = (GameObject)Instantiate(thisAttacker, transform);
         AbstractEnemyController enemyController = newAttacker.GetComponent<AbstractEnemyController>();
 
         enemyController.Initialize(getTargetPosition(), GetDirectionX());

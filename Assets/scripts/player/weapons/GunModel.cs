@@ -119,8 +119,7 @@ public class GunModel : AbstractModel {
 
 
     private void ThrowShell(int directionX, bool topPosition) {
-        int random = Random.Range(0, 3);
-        Debug.Log("Random: " + random);
+        int random = Random.Range(0, shellBounceUpArray.Length);
         GameObject[] shellBounceArray = (topPosition ? shellBounceUpArray : shellBounceDownArray);
         GameObject shellBounceInstance = Instantiate(shellBounceArray[random], transform.position, transform.rotation);
         Vector3 shellScale = shellBounceInstance.transform.localScale;
