@@ -6,6 +6,7 @@ public class Cam : MonoBehaviour {
 
     const float TEXTURE_SIZE = 25f;
 	private float lastHeight = 0;
+    private float lastWidth = 0;
     private GuiController guiController;
 
     //public RectTransform displayCanvas;
@@ -29,33 +30,20 @@ public class Cam : MonoBehaviour {
 
     private void UpdateOrthographicSize() {
 
-        if (lastHeight != Screen.height) {
+        if (lastHeight != Screen.height || lastWidth != Screen.width) {
             lastHeight = Screen.height;
+            lastWidth = Screen.width;
 
-            float scaleN = Mathf.Max(Mathf.Round(Screen.height / 260f), 2);  // min scale is 2
-            Debug.Log("ScaleNew: " + (Screen.height / 260f) + "-" + scaleN);
+            float modifier = TEXTURE_SIZE * 10;
+            float scale = Mathf.Max(Mathf.Round(Screen.height / modifier), 2);  // min scale is 2
+            Debug.Log("ScaleNew: " + (Screen.height / modifier) + "-" + scale);
             
-            float erg = (Screen.height / (TEXTURE_SIZE * 2f)) / scaleN;
+            float erg = (Screen.height / (TEXTURE_SIZE * 2f)) / scale;
 
 
             Camera.main.orthographicSize = erg;
 
             guiController.RefreshPositions();
-
-            /*
-            float ergDoubled = erg * 2;
-            float newHeight = ergDoubled / displayCanvas.localScale.y;
-            float newWidth = ((ergDoubled * Screen.width )/ Screen.height) / displayCanvas.localScale.x;
-
-            Debug.Log(Screen.width + " / " + Screen.height);
-
-
-            Vector2 v = new Vector2(newWidth, newHeight);
-            displayCanvas.sizeDelta = v;
-            //Debug.Log(cs.sizeDelta.x + "/" + cs.sizeDelta.y + "- scale:" + scale + "t: " + Camera.main.pixelRect.height + " - " + cs.localScale.y);
-
-            */
-
         }
     }
 	

@@ -63,14 +63,17 @@ public class GunModel : AbstractModel {
         }
     }
 
-    public void Reload(GunModel gunModel) {
+    public void Reload() {
         // check if ammunition left or inventory empty
         if (!reloading && Inventory.instance.bullets[gunStruct.bullet.bulletType] > 0) {
             reloading = true;
-            SoundManager.PlaySFX(gunStruct.gunReloadSound);
             Invoke("ReloadFinished", gunStruct.timeToReload);
         }
     }
+    public bool IsReloading() {
+        return reloading;
+    }
+
     private void ReloadFinished() {
         // get bullets from inventory
         int bulletsInInventory = Inventory.instance.bullets[gunStruct.bullet.bulletType];

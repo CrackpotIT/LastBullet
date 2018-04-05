@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerModel : AbstractModel {
 
-
+    public static string CLIP_RELOAD_TOP = "PlayerReloadTop";
 
     public override void SetAnimatorBool(ANIM_PARAMS parameter, bool value) {
         base.SetAnimatorBool(parameter, value);

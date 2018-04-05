@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AbstractModel : MonoBehaviour {
 
-    public enum ANIM_PARAMS {IDLE_TOP, IDLE_BOTTOM, MOVE_UP, MOVE_DOWN, FIRE_TOP, FIRE_BOTTOM, RELOAD, FIRE_TOP_RELEASE, FIRE_BOTTOM_RELEASE };
+    public enum ANIM_PARAMS {IDLE_TOP, IDLE_BOTTOM, MOVE_UP, MOVE_DOWN, FIRE_TOP, FIRE_BOTTOM, FIRE_TOP_RELEASE, FIRE_BOTTOM_RELEASE, RELOAD_TOP };
     public enum ANIM_EVENT_PARAMS { FIRE_RELEASE };
 
     [HideInInspector]
@@ -31,5 +31,16 @@ public abstract class AbstractModel : MonoBehaviour {
 
     public virtual void SetAnimatorBool(ANIM_PARAMS parameter, bool value) {
         animator.SetBool(parameter.ToString(), value);
+    }
+
+    public AnimationClip GetAnimationClip(string name) {
+        if (!animator) return null; // no animator
+
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips) {
+            if (clip.name == name) {
+                return clip;
+            }
+        }
+        return null; // no clip by that name
     }
 }

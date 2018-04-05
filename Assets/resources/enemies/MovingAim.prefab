@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 61190767212905592}
   - component: {fileID: 50869375690315432}
   - component: {fileID: 114048838276222300}
-  - component: {fileID: 212649236963877686}
+  - component: {fileID: 212841294439952868}
   m_Layer: 0
   m_Name: MovingAim
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.2, y: 2}
-    newSize: {x: 0.8, y: 2}
+    newSize: {x: 1.2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -152,7 +152,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 20
   m_Time: 2
   m_Parameters:
     serializedVersion: 2
@@ -229,13 +229,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  health: 1
+  xp: 1
   targetPosition: {x: 0, y: 0}
   directionX: 1
   moveUp: 0
   sparkEmitter: {fileID: 1180366017802572, guid: 3fd846ca7285d53489ad4ea35b659b0e,
     type: 2}
   hitSound: {fileID: 8300000, guid: 962af25825196244aa21b568ed9a5e2e, type: 3}
---- !u!212 &212649236963877686
+--- !u!212 &212841294439952868
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -268,13 +270,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 5c131e42aa453e34997c1dfde485a3c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 2}
+  m_Size: {x: 1.2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

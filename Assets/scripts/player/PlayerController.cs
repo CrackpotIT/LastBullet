@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour {
         currentState.HandleEvent(AbstractState.ACTION.BOTTOM_RIGHT);
     }
     public void EventReload() {
-        gunModel.Reload(gunModel);
+        currentState.HandleEvent(AbstractState.ACTION.RELOAD);
     }
 
 

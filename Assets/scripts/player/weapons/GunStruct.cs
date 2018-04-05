@@ -13,5 +13,8 @@ public struct GunStruct {
     public int clipSize;
     public AudioClip gunShotSound;
     public AudioClip gunEmptySound;
-    public AudioClip gunReloadSound;
+    public AudioClip gunReloadOutSound;
+    public AudioClip gunReloadInsertSound;
+    public AudioClip gunReloadInSound;
+    public AudioClip gunReloadSnapSound;
 }

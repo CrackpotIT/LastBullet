@@ -136,14 +136,19 @@ MonoBehaviour:
   shellBounceOffsetX: 0
   gunStruct:
     timeBetweenShots: 0.5
-    timeToReload: 1.5
+    timeToReload: 2
     damageModifier: 0
     bulletSpeed: 30
     bullet: {fileID: 114453691313324992, guid: ba5ee39adbad6ba47a6535dbd5fc0edb, type: 2}
     clipSize: 12
     gunShotSound: {fileID: 8300000, guid: eeb04ff8d5e105749b6814646ab04a69, type: 3}
     gunEmptySound: {fileID: 8300000, guid: ae47af6205ca1ed4884dda79b506a686, type: 3}
-    gunReloadSound: {fileID: 8300000, guid: b5595405a64bdf146958be9f8a2529e6, type: 3}
+    gunReloadOutSound: {fileID: 8300000, guid: a0bed9da04beb8c40b9e1bbc0c26ed6b, type: 3}
+    gunReloadInsertSound: {fileID: 8300000, guid: 3938017c130286d4dba42f89b599dbef,
+      type: 3}
+    gunReloadInSound: {fileID: 8300000, guid: 2ecb353f9ddc48742855cb0d3d9e663d, type: 3}
+    gunReloadSnapSound: {fileID: 8300000, guid: 954a1d9238b27d747ba4be543522f8e6,
+      type: 3}
 --- !u!212 &212538945102130512
 SpriteRenderer:
   m_ObjectHideFlags: 1
