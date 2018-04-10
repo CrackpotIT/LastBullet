@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6aa708f1657a4984d8f4b50439375b44
-timeCreated: 1522183778
+timeCreated: 1523301099
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -121,7 +121,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,7 +135,7 @@ TextureImporter:
         x: 8
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,7 +149,7 @@ TextureImporter:
         x: 16
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ TextureImporter:
         x: 24
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,7 +177,7 @@ TextureImporter:
         x: 32
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,7 +191,7 @@ TextureImporter:
         x: 40
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,7 +205,7 @@ TextureImporter:
         x: 48
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,7 +219,7 @@ TextureImporter:
         x: 56
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,7 +233,7 @@ TextureImporter:
         x: 64
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,7 +247,7 @@ TextureImporter:
         x: 72
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,7 +261,7 @@ TextureImporter:
         x: 80
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,7 +275,7 @@ TextureImporter:
         x: 88
         y: 0
         width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,35 +289,7 @@ TextureImporter:
         x: 96
         y: 0
         width: 8
-        height: 15
-      alignment: 3
-      pivot: {x: 1, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: numbers_digital_13
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 0
-        width: 8
-        height: 15
-      alignment: 3
-      pivot: {x: 1, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: numbers_digital_14
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 8
-        height: 15
+        height: 9
       alignment: 3
       pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}

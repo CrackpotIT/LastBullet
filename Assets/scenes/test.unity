@@ -169,6 +169,50 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4599282a519d69646924099c0c47f5e7, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &185545843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 185545845}
+  - component: {fileID: 185545844}
+  m_Layer: 0
+  m_Name: HealthDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &185545844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185545843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad5a9d51f818ec47854964dc7faca9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offSetX: 0.36
+  sortOrder: 120
+  maxHealth: 5
+  heartSprite: {fileID: 21300024, guid: 6aa708f1657a4984d8f4b50439375b44, type: 3}
+--- !u!4 &185545845
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185545843}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2144679538}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444586153 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1905615785760314, guid: d57ca870f3baf384f8325993a79784b7,
@@ -226,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3a232413fcec44ea92ee92a8af66f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSeconds: 100
+  startSeconds: 1000
 --- !u!114 &458109814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1159,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4199857810562664, guid: 4a5771141030a17478a1875379fe536f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083036017221606, guid: 4a5771141030a17478a1875379fe536f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a5771141030a17478a1875379fe536f, type: 2}
   m_IsPrefabParent: 0
@@ -1364,6 +1416,7 @@ MonoBehaviour:
   bulletCounter: {fileID: 716025375}
   xpCounter: {fileID: 1062749618}
   timer: {fileID: 458109814}
+  healthDisplay: {fileID: 185545844}
 --- !u!4 &2144679538
 Transform:
   m_ObjectHideFlags: 0
@@ -1381,6 +1434,7 @@ Transform:
   - {fileID: 716025374}
   - {fileID: 458109812}
   - {fileID: 1062749617}
+  - {fileID: 185545845}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

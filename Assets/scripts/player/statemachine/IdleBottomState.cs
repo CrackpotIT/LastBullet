@@ -14,7 +14,10 @@ public class IdleBottomState: AbstractState {
     }
 
     public override AbstractState UpdateState() {
-        
+        if (currentAction == ACTION.RELOAD) {
+            return new ReloadBottomState(playerController);
+        }
+
         if (currentAction == ACTION.TOP_LEFT || currentAction == ACTION.TOP_RIGHT) {
             UpdateDirectionX();
             return new MoveUpState(currentAction, playerController);
