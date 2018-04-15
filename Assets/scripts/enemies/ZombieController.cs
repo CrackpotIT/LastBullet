@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieController : AbstractEnemyController {
+public class ZombieController : AbstractEnemyDestructable {
     public enum BODYPART { HEAD, BODY };
 
     public float damageTime = 0;

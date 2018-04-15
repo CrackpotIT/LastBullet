@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Can : AbstractEnemyController {
+public class Can : AbstractEnemyDestructable {
 
     public GameObject sparkEmitter;
     public AudioClip hitSound;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingAim : AbstractEnemyController {
+public class MovingAim : AbstractEnemyDestructable {
     
     public bool moveUp;
     public GameObject sparkEmitter;

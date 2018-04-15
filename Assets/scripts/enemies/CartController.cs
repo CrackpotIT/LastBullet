@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CartController : AbstractEnemyController {
+public class CartController : AbstractEnemySpawn {
 
     public float offSetY = 0;
     public float damping = 0.5f;
@@ -65,11 +65,4 @@ public class CartController : AbstractEnemyController {
         }
     }
 
-    public override void DestroyEvent() {
-        throw new System.NotImplementedException();
-    }
-
-    public override void DamageEvent() {
-        throw new System.NotImplementedException();
-    }
 }
