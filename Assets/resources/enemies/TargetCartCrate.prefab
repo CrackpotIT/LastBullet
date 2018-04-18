@@ -197,7 +197,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0}
   directionX: 0
   health: 3
-  xp: 1
+  xp: 5
   impactEffect: {fileID: 1898104721346376, guid: 2b400a5e7a1597d468016760f5b9059e,
     type: 2}
   explosionEffect: {fileID: 1806759542141970, guid: 5b2d8d8a1a8086b418dfdb9e35f471de,

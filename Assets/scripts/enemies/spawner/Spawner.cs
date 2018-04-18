@@ -3,8 +3,7 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
     
-	public GameObject[] attackerPrefabArray;
-    public float[] everySecondsArray;
+	public SpawnerSettings[] spawnerSettings;
     public float minTimeBetweenSpawns;
 
     private float lastSpawn = 0;
@@ -15,9 +14,9 @@ public class Spawner : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        for (int i = 0; i < attackerPrefabArray.Length; i++) {
-            if (IsTimeToSpawn(everySecondsArray[i])) {
-                Spawn(attackerPrefabArray[i]);
+        for (int i = 0; i < spawnerSettings.Length; i++) {
+            if (IsTimeToSpawn(spawnerSettings[i].everySecondsArray)) {
+                Spawn(spawnerSettings[i].attackerPrefabArray);
             }
         }
 	}

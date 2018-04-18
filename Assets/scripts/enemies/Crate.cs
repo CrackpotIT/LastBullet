@@ -26,6 +26,10 @@ public class Crate : AbstractEnemyDestructable {
         GameObject go = Instantiate(explosionEffect, transform.position, transform.rotation);
         go.transform.localScale = new Vector3(transform.parent.transform.localScale.x, transform.parent.transform.localScale.y, transform.parent.transform.localScale.z);
         Instantiate(spawnObject, transform.position, transform.rotation);
+
+        // shake Camera
+        CameraShake.GetInstance().StartShake(.1f, .2f);
+
         Destroy(gameObject);
     }
 }

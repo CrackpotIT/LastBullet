@@ -195,13 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2830f16ce58d7754c9cca9f940adbd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  health: 1
-  xp: 1
+  moveSpeed: 11
   targetPosition: {x: 0, y: 0}
   directionX: 0
   offSetY: -0.1
-  damping: 0.3
+  damping: 0.2
 --- !u!114 &114906865019345738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,10 +212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  health: 1
-  xp: 1
   targetPosition: {x: 0, y: 0}
   directionX: 0
+  health: 1
+  xp: 1
   sparkEmitter: {fileID: 1036637142665286, guid: 45b09f6f789c3fb40a94e030c37b553d,
     type: 2}
   hitSound: {fileID: 8300000, guid: 4d3e5a411ba8b3d4996633d21b4bed03, type: 3}

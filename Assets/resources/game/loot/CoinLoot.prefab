@@ -9,48 +9,66 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1592538752715862}
+  m_RootGameObject: {fileID: 1959791826922736}
   m_IsPrefabParent: 1
---- !u!1 &1592538752715862
+--- !u!1 &1959791826922736
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4358111221070420}
-  - component: {fileID: 212896365268088684}
-  - component: {fileID: 114402787422081568}
-  - component: {fileID: 96524601000898656}
+  - component: {fileID: 4168122968901362}
+  - component: {fileID: 212378754216375758}
+  - component: {fileID: 95275005475603498}
+  - component: {fileID: 96034664697568420}
+  - component: {fileID: 114051625517288490}
   m_Layer: 0
-  m_Name: Package
+  m_Name: CoinLoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4358111221070420
+--- !u!4 &4168122968901362
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592538752715862}
+  m_GameObject: {fileID: 1959791826922736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.81, y: -2.59, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!96 &96524601000898656
+--- !u!95 &95275005475603498
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959791826922736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5ffbf649f7fabe4fb4f4a65cdec14a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!96 &96034664697568420
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592538752715862}
+  m_GameObject: {fileID: 1959791826922736}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -76,11 +94,11 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Time: 0.3
+  m_SortingOrder: 19
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.5
+    widthMultiplier: 0.3
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -91,23 +109,17 @@ TrailRenderer:
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.620891
-        value: 0.390683
-        inSlope: -1.4808774
-        outSlope: -1.4808774
-        tangentMode: 0
-      - serializedVersion: 2
         time: 1
-        value: 0.0053482056
-        inSlope: 0
-        outSlope: 0
+        value: 0.010695815
+        inSlope: -2.2881901
+        outSlope: -2.2881901
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.7254902, g: 0.6, b: 0.4745098, a: 0.4509804}
+      key0: {r: 1, g: 1, b: 1, a: 0.27450982}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -141,28 +153,28 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114402787422081568
+--- !u!114 &114051625517288490
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592538752715862}
+  m_GameObject: {fileID: 1959791826922736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2715f8fe3413fa24cb42021d5260a481, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c83d31e746d30949ab5aed7acae03a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPos: {x: 0, y: -4, z: 0}
-  speed: 8
-  arcHeight: 2.7
-  arrivedEffect: {fileID: 1353203011414960, guid: 645f59ef81b6a4246bf888af862fc59e,
-    type: 2}
---- !u!212 &212896365268088684
+  lootType: 3
+  takeSound: {fileID: 8300000, guid: e88ed948f03d5e644a6d4fba600bb2c5, type: 3}
+  collected: 0
+  speed: 20
+  amount: 0
+--- !u!212 &212378754216375758
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592538752715862}
+  m_GameObject: {fileID: 1959791826922736}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -190,13 +202,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 509f70ef4d4ab734eab8c74427196233, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: 59aab0c5abb51234cb6a94eaee90306b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.44, y: 0.44}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

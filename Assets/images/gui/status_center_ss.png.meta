@@ -1,30 +1,30 @@
 fileFormatVersion: 2
-guid: 79642835ba49511429dfd35ea8671f19
-timeCreated: 1524080597
+guid: e40ee600357e72247991d6f14065e2b2
+timeCreated: 1524081208
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: status_center_0
-    21300002: status_center_1
-    21300004: status_center_2
-    21300006: status_center_3
-    21300008: status_center_4
-    21300010: status_center_5
-    21300012: status_center_6
-    21300014: status_center_7
-    21300016: status_center_8
-    21300018: status_center_9
-    21300020: status_center_10
-    21300022: status_center_11
-    21300024: status_center_12
-    21300026: status_center_13
-    21300028: status_center_14
-    21300030: status_center_15
-    21300032: status_center_16
-    21300034: status_center_17
-    21300036: status_center_18
-    21300038: status_center_19
-    21300040: status_center_20
+    21300000: status_center_ss_0
+    21300002: status_center_ss_1
+    21300004: status_center_ss_2
+    21300006: status_center_ss_3
+    21300008: status_center_ss_4
+    21300010: status_center_ss_5
+    21300012: status_center_ss_6
+    21300014: status_center_ss_7
+    21300016: status_center_ss_8
+    21300018: status_center_ss_9
+    21300020: status_center_ss_10
+    21300022: status_center_ss_11
+    21300024: status_center_ss_12
+    21300026: status_center_ss_13
+    21300028: status_center_ss_14
+    21300030: status_center_ss_15
+    21300032: status_center_ss_16
+    21300034: status_center_ss_17
+    21300036: status_center_ss_18
+    21300038: status_center_ss_19
+    21300040: status_center_ss_20
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -61,11 +61,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
-  spriteExtrude: 0
+  spriteMode: 2
+  spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 2
-  spritePivot: {x: 0.5, y: 1}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 25
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -88,7 +88,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -98,7 +98,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -108,7 +108,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: status_center_0
+      name: status_center_ss_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,7 +135,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_1
+      name: status_center_ss_1
       rect:
         serializedVersion: 2
         x: 109
@@ -149,7 +149,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_2
+      name: status_center_ss_2
       rect:
         serializedVersion: 2
         x: 218
@@ -163,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_3
+      name: status_center_ss_3
       rect:
         serializedVersion: 2
         x: 327
@@ -177,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_4
+      name: status_center_ss_4
       rect:
         serializedVersion: 2
         x: 436
@@ -191,7 +191,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_5
+      name: status_center_ss_5
       rect:
         serializedVersion: 2
         x: 545
@@ -205,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_6
+      name: status_center_ss_6
       rect:
         serializedVersion: 2
         x: 654
@@ -219,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_7
+      name: status_center_ss_7
       rect:
         serializedVersion: 2
         x: 763
@@ -233,7 +233,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_8
+      name: status_center_ss_8
       rect:
         serializedVersion: 2
         x: 872
@@ -247,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_9
+      name: status_center_ss_9
       rect:
         serializedVersion: 2
         x: 981
@@ -261,7 +261,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_10
+      name: status_center_ss_10
       rect:
         serializedVersion: 2
         x: 1090
@@ -275,7 +275,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_11
+      name: status_center_ss_11
       rect:
         serializedVersion: 2
         x: 1199
@@ -289,7 +289,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_12
+      name: status_center_ss_12
       rect:
         serializedVersion: 2
         x: 1308
@@ -303,7 +303,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_13
+      name: status_center_ss_13
       rect:
         serializedVersion: 2
         x: 1417
@@ -317,7 +317,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_14
+      name: status_center_ss_14
       rect:
         serializedVersion: 2
         x: 1526
@@ -331,7 +331,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_15
+      name: status_center_ss_15
       rect:
         serializedVersion: 2
         x: 1635
@@ -345,7 +345,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_16
+      name: status_center_ss_16
       rect:
         serializedVersion: 2
         x: 1744
@@ -359,7 +359,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_17
+      name: status_center_ss_17
       rect:
         serializedVersion: 2
         x: 1853
@@ -373,7 +373,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_18
+      name: status_center_ss_18
       rect:
         serializedVersion: 2
         x: 1962
@@ -387,7 +387,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_19
+      name: status_center_ss_19
       rect:
         serializedVersion: 2
         x: 2071
@@ -401,7 +401,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: status_center_20
+      name: status_center_ss_20
       rect:
         serializedVersion: 2
         x: 2180

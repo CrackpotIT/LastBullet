@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class Package: MonoBehaviour {
 
-    [Tooltip("Position we want to hit")]
-    public Vector3 targetPos;
 
     [Tooltip("Horizontal speed, in units/sec")]
     public float speed = 10;
@@ -13,14 +11,17 @@ public class Package: MonoBehaviour {
     [Tooltip("How high the arc should be, in units")]
     public float arcHeight = 1;
 
-    public GameObject arrivedEffect;
 
     Vector3 startPos;
+    Vector3 targetPos;
 
     void Start() {
         // Cache our start position, which is really the only thing we need
         // (in addition to our current position, and the target).
         startPos = transform.position;
+
+        Coordinates coordinates = GameObject.FindObjectOfType<Coordinates>();
+        targetPos = coordinates.loot.transform.position;
     }
 
     void Update() {
@@ -42,7 +43,8 @@ public class Package: MonoBehaviour {
     }
 
     void Arrived() {
-        Instantiate(arrivedEffect, transform.position, transform.rotation);
+        //Instantiate(arrivedEffect, transform.position, transform.rotation);
+        GameController.GetInstance().InstantiateLoot();
         Destroy(gameObject);
     }
 

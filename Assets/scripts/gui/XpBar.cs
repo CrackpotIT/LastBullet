@@ -10,7 +10,7 @@ public class XpBar : MonoBehaviour {
     public Sprite barSprite;
 
     public void Start() {
-        RefreshDisplay(1f);
+        RefreshDisplay(0f);
     }
 
     public void RefreshDisplay(float xpPercent) {

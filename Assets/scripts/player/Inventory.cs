@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class Inventory : MonoBehaviour {
 
     public static Inventory instance;
 
+    public int coins;
     public Dictionary<Bullet.BULLET_TYPE, int> bullets = new Dictionary<Bullet.BULLET_TYPE, int>();
         
     

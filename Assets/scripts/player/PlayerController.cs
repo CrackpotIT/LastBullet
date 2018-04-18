@@ -19,9 +19,7 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public PlayerModel playerModel;
 
-    private void Awake() {
 
-    }
 
     void Start() {
         GameObject instance = Instantiate(Resources.Load("player/weapons/GunModel_SuckSour", typeof(GameObject))) as GameObject;
@@ -72,7 +70,10 @@ public class PlayerController : MonoBehaviour {
     public void EventReload() {
         currentState.HandleEvent(AbstractState.ACTION.RELOAD);
     }
-
+    public void EventLoot() {
+        Debug.Log("EVENT LOOT");
+        GameController.GetInstance().GetLoot();
+    }
 
 
     public void MovePlayer(Vector3 endPosition) {
