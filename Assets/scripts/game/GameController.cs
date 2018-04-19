@@ -15,9 +15,12 @@ public class GameController : MonoBehaviour {
 
     // Static instance
     static GameController _instance;
-    
-    void Start () {
+
+    private void Awake() {
         _instance = this;
+    }
+
+    void Start () {        
         coordinates = GameObject.FindObjectOfType<Coordinates>();        
 	}
 
@@ -56,6 +59,23 @@ public class GameController : MonoBehaviour {
             textMesh.text = loot.GetText();
 
             Instantiate(lootTextEffect, lootTextInstance.transform);
+        }
+    }
+
+    public void UpdateSize() {
+        // Refresh Gui positions
+        GuiController.GetInstance().RefreshPositions();
+
+        // Refresh Shredders
+        Shredder[] shredderList = GameObject.FindObjectsOfType<Shredder>();
+        foreach(Shredder shredder in shredderList) {
+            shredder.RefreshPosition();
+        }
+
+        // Refresh Spawners
+        Spawner[] spawnerList = GameObject.FindObjectsOfType<Spawner>();
+        foreach (Spawner spawner in spawnerList) {
+            spawner.RefreshPosition();
         }
     }
     

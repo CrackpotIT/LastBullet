@@ -21,8 +21,7 @@ public class XpBar : MonoBehaviour {
 
         int maxCount = Mathf.FloorToInt(maxDimensionX / offSetX);
         int numberOfBars = Mathf.FloorToInt(maxCount * Mathf.Clamp(xpPercent, 0, 1));
-
-        Debug.Log("Number Bars: " +numberOfBars);
+        
         for (int i = 0; i < numberOfBars; i++) {
             CreateBarSprite(i);
         }

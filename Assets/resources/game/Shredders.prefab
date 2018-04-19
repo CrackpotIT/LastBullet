@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 61842174930840206}
   - component: {fileID: 114035481068098084}
   m_Layer: 0
-  m_Name: Shredder
+  m_Name: ShredderRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 61922116529512072}
   - component: {fileID: 114721945428045622}
   m_Layer: 0
-  m_Name: Shredder
+  m_Name: ShredderLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310282475331114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: -15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4680868216057706}
@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183158640129298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4680868216057706}
@@ -152,7 +152,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1155537681698636}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -186,7 +186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 5}
+  m_Size: {x: 30, y: 4}
   m_EdgeRadius: 0
 --- !u!61 &61602562994135190
 BoxCollider2D:
@@ -211,7 +211,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 5}
+  m_Size: {x: 30, y: 4}
   m_EdgeRadius: 0
 --- !u!61 &61842174930840206
 BoxCollider2D:
@@ -236,7 +236,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 30}
+  m_Size: {x: 4, y: 30}
   m_EdgeRadius: 0
 --- !u!61 &61922116529512072
 BoxCollider2D:
@@ -261,7 +261,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 30}
+  m_Size: {x: 4, y: 30}
   m_EdgeRadius: 0
 --- !u!114 &114035481068098084
 MonoBehaviour:

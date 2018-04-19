@@ -7,21 +7,14 @@ public class Cam : MonoBehaviour {
     const float TEXTURE_SIZE = 25f;
 	private float lastHeight = 0;
     private float lastWidth = 0;
-    private GuiController guiController;
 
     //public RectTransform displayCanvas;
 
     // Use this for initialization
     void Start () {
-
-        guiController = GameObject.FindObjectOfType<GuiController>();
         UpdateOrthographicSize();
-
 	}
-
-
-
-	
+    
 	// Update is called once per frame
 	void Update () {
         UpdateOrthographicSize();
@@ -40,10 +33,9 @@ public class Cam : MonoBehaviour {
             
             float erg = (Screen.height / (TEXTURE_SIZE * 2f)) / scale;
 
-
             Camera.main.orthographicSize = erg;
 
-            guiController.RefreshPositions();
+            GameController.GetInstance().UpdateSize();
         }
     }
 	

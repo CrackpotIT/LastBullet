@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour {
         currentState.HandleEvent(AbstractState.ACTION.RELOAD);
     }
     public void EventLoot() {
-        Debug.Log("EVENT LOOT");
         GameController.GetInstance().GetLoot();
     }
 

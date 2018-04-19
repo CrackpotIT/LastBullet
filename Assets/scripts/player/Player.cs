@@ -28,7 +28,6 @@ public class Player: MonoBehaviour {
         xp += xpAdd;
         float nextLevel = (level + 1) * 100;
         float xpPercent = xp / nextLevel;
-        Debug.Log("XpPercent: " + xpPercent);
         GuiController.GetInstance().RefreshXpCount(xpPercent);
     }
 

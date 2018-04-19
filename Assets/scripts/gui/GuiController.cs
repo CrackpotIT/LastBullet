@@ -18,9 +18,8 @@ public class GuiController : MonoBehaviour {
     // Static instance
     static GuiController _instance;
 
-    private void Start() {
+    private void Awake() {
         _instance = this;
-
     }
 
 

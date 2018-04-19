@@ -19,14 +19,17 @@ public class Crate : AbstractEnemyDestructable {
         
         GameObject go = Instantiate(impactEffect, transform.position, transform.rotation);
         go.transform.localScale = new Vector3(transform.parent.transform.localScale.x, transform.parent.transform.localScale.y, transform.parent.transform.localScale.z);
+        go.transform.parent = EffectParent.GetInstance().transform;
     }
 
     public override void DestroyEvent() {
         SoundManager.PlaySFX(explosionSound);
         GameObject go = Instantiate(explosionEffect, transform.position, transform.rotation);
         go.transform.localScale = new Vector3(transform.parent.transform.localScale.x, transform.parent.transform.localScale.y, transform.parent.transform.localScale.z);
-        Instantiate(spawnObject, transform.position, transform.rotation);
+        go.transform.parent = EffectParent.GetInstance().transform;
 
+        Instantiate(spawnObject, transform.position, transform.rotation);
+        
         // shake Camera
         CameraShake.GetInstance().StartShake(.1f, .2f);
 

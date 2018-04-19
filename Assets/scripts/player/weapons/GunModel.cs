@@ -101,6 +101,8 @@ public class GunModel : AbstractModel {
                 Transform transformToUser = (topPosition ? muzzlePositionTop : muzzlePositionBottom);
                 Bullet newBullet = Instantiate(gunStruct.bullet, transformToUser.position, transformToUser.rotation);
                 newBullet.InitBullet(gunStruct.bulletSpeed, gunStruct.damageModifier, directionX);
+                newBullet.transform.parent = EffectParent.GetInstance().transform;
+                
 
                 // Create empty shell
                 ThrowShell(directionX, topPosition);
@@ -127,6 +129,6 @@ public class GunModel : AbstractModel {
         GameObject shellBounceInstance = Instantiate(shellBounceArray[random], transform.position, transform.rotation);
         Vector3 shellScale = shellBounceInstance.transform.localScale;
         shellBounceInstance.transform.localScale = new Vector3(directionX * shellScale.x, shellScale.y, shellScale.z);
-        shellBounceInstance.transform.parent = null;
+        shellBounceInstance.transform.parent = EffectParent.GetInstance().transform;
     }
 }

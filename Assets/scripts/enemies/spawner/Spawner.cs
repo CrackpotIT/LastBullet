@@ -2,11 +2,14 @@
 using System.Collections;
 
 public class Spawner : MonoBehaviour {
-    
+
+
+    public bool fitToScreenWidth = false;
 	public SpawnerSettings[] spawnerSettings;
     public float minTimeBetweenSpawns;
 
     private float lastSpawn = 0;
+    private const float DISTANCE_FROM_GAMEBORDER_X = .5f;
 
     private void Start() {
         
@@ -72,4 +75,30 @@ public class Spawner : MonoBehaviour {
             return false;
 		}
 	}
+
+
+    public void RefreshPosition() {
+        if (fitToScreenWidth) {
+            float x = -1;
+            float offsetMultiplicator = 0;
+            if (transform.position.x > 0) {
+                // Right shredder
+                x = 1;
+                offsetMultiplicator = 1;
+            }
+            if (transform.position.x < 0) {
+                // Left shredder
+                x = 0;
+                offsetMultiplicator = -1;
+            }
+
+            if (x >= 0) {
+                float y = transform.position.y;
+                float z = transform.position.z;
+                Vector3 newPos = Camera.main.ViewportToWorldPoint(new Vector3(x, 0, 0));
+                float offsetX = offsetMultiplicator * DISTANCE_FROM_GAMEBORDER_X;
+                transform.position = new Vector3(newPos.x + offsetX, y, z);
+            }
+        }
+    }
 }

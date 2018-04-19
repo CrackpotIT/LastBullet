@@ -48,13 +48,11 @@ public abstract class Loot : MonoBehaviour {
     void Update () {
 		if (collected) {
             // Compute the next position, with arc added in
-            float x0 = startPos.x;
             float x1 = targetPos.x;
             float y1 = targetPos.y;
             float nextX = Mathf.MoveTowards(transform.position.x, x1, speed * Time.deltaTime);
             float nextY = Mathf.MoveTowards(transform.position.y, y1, speed * Time.deltaTime);
             Vector3 nextPos = new Vector3(nextX, nextY, transform.position.z);
-            Debug.Log("Next Pos: " + nextPos.x + " / " + nextPos.y + " / " + nextPos.z);
             transform.position = nextPos;
 
             // Do something when we reach the target
