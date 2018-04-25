@@ -65,29 +65,26 @@ public class CartController : AbstractEnemySpawn {
     }
 
     private void InitializeItems(int sortingOrder) {
-        Debug.Log("InitializeItems");
-        int randomAmount = Random.Range(1, transform.childCount+1);
-        Debug.Log("RandomAmount: " + randomAmount);
-        int itemsPlaced = 0;
-        int availablePositions = transform.childCount;
-        Debug.Log("AvailablePos:" + availablePositions);
-        for (int i = 0; i < availablePositions; i++) {
-            if (randomAmount > itemsPlaced) {
-                // there are items left
-                int placeIt = Random.Range(0, 2);
-                bool positionMustBePlaced = ((availablePositions - (i + 1)) <= (randomAmount - itemsPlaced));
-                if (placeIt == 1 || positionMustBePlaced) {
-                    itemsPlaced++;
-                    PlaceItem(i, sortingOrder);
+        if (itemList.Length > 0) {
+            int randomAmount = Random.Range(1, transform.childCount + 1);
+            int itemsPlaced = 0;
+            int availablePositions = transform.childCount;
+            for (int i = 0; i < availablePositions; i++) {
+                if (randomAmount > itemsPlaced) {
+                    // there are items left
+                    int placeIt = Random.Range(0, 2);
+                    bool positionMustBePlaced = ((availablePositions - (i + 1)) <= (randomAmount - itemsPlaced));
+                    if (placeIt == 1 || positionMustBePlaced) {
+                        itemsPlaced++;
+                        PlaceItem(i, sortingOrder);
+                    }
                 }
-            }             
+            }
         }
     }
 
     private void PlaceItem(int position, int sortingOrder) {
-        Debug.Log("PlazeItem");
         GameObject randomItem = itemList[Random.Range(0, itemList.Length)];
-        Debug.Log("Item:" + randomItem.name); 
         Transform positionTransform = transform.GetChild(position);
         GameObject item = Instantiate(randomItem, positionTransform);
         SpriteRenderer spriteRenderer = item.GetComponent<SpriteRenderer>();

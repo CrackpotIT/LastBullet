@@ -796,6 +796,96 @@ Transform:
   m_PrefabParentObject: {fileID: 4046894656712782, guid: 309948792d88e57469fbd2939351fbc1,
     type: 2}
   m_PrefabInternal: {fileID: 1108161885}
+--- !u!1001 &1024559490
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114783234143742180, guid: 158accb77f0442546af37ee9f4602de5,
+        type: 2}
+      propertyPath: damageSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554340777770866, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289678617295520, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_Name
+      value: TargetCartBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936975308376598, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+      propertyPath: m_Name
+      value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 212408662133419452, guid: 158accb77f0442546af37ee9f4602de5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a396a8f91c21f8429b8782e51e1ccec,
+        type: 3}
+    - target: {fileID: 114783234143742180, guid: 158accb77f0442546af37ee9f4602de5,
+        type: 2}
+      propertyPath: damageSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300002, guid: 3a396a8f91c21f8429b8782e51e1ccec,
+        type: 3}
+    - target: {fileID: 114783234143742180, guid: 158accb77f0442546af37ee9f4602de5,
+        type: 2}
+      propertyPath: damageSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300004, guid: 3a396a8f91c21f8429b8782e51e1ccec,
+        type: 3}
+    - target: {fileID: 114723800366895962, guid: 158accb77f0442546af37ee9f4602de5,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114783234143742180, guid: 158accb77f0442546af37ee9f4602de5,
+        type: 2}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 1361477382884228, guid: d4ee694787e60d64dabf00bcff41890b,
+        type: 2}
+    - target: {fileID: 114783234143742180, guid: 158accb77f0442546af37ee9f4602de5,
+        type: 2}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 1144610300075816, guid: cdb5704bcd1eae24abe1204f16213712,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 158accb77f0442546af37ee9f4602de5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1063313814
 Prefab:
   m_ObjectHideFlags: 0
@@ -1073,7 +1163,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1038719267714884, guid: 9ffcdac48c0096b4797b907882b8bd89, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114669169579569128, guid: 9ffcdac48c0096b4797b907882b8bd89,
         type: 2}

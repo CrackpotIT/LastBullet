@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Crate : AbstractEnemyDestructable {
 
+    public Sprite[] damageSprites;
+
     public GameObject impactEffect;
     public GameObject explosionEffect;
     public AudioClip impactSound;
     public AudioClip explosionSound;
 
     public GameObject spawnObject;
-    
+
+    private SpriteRenderer spriteRenderer;
+    private int damage;
+
+    private void Start() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
 
     public override void DamageEvent() {
+        // change sprite
+        if (damageSprites.Length > damage) {
+            spriteRenderer.sprite = damageSprites[damage];
+            damage++;
+        }
         // play sound
         SoundManager.PlaySFX(impactSound);
         // instanciate sparkEmitter
