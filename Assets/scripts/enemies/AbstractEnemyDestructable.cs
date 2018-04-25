@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbstractEnemyDestructable : AbstractEnemySpawn {
+public abstract class AbstractEnemyDestructable : MonoBehaviour {
     
     public float health = 1;
     public int xp = 1;

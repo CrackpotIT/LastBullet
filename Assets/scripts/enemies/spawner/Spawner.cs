@@ -36,10 +36,10 @@ public class Spawner : MonoBehaviour {
         float targetX = 0;
         if (transform.position.x > 0) {
             // spawner right from player
-            targetX = -1;
+            targetX = 1;
         } else {
             // spawner left from player
-            targetX = 1;
+            targetX = -1;
         }
         return targetX;
     }
@@ -47,7 +47,7 @@ public class Spawner : MonoBehaviour {
     
     private Vector2 getTargetPosition() {
         float targetX = GetDirectionX();
-        Vector2 result = new Vector2(-targetX, transform.position.y);
+        Vector2 result = new Vector2(targetX, transform.position.y);
         return result;
     }
 	

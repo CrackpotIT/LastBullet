@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6871b1e071d762b46bf5e6bc04e8ce0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellPlingSound: {fileID: 8300000, guid: d96133cf807172b4ab167b3149d26641, type: 3}
+  shellPlingSound: {fileID: 8300000, guid: 283c266da9adc2949a27bd31ded96f81, type: 3}
 --- !u!212 &212665755169135764
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -13,17 +13,13 @@ public abstract class Loot : MonoBehaviour {
 
     [Tooltip("Horizontal speed, in units/sec")]
     public float speed = 10;
-
-    Vector3 startPos;
+    
     Vector3 targetPos;
 
     Animator anim;
 
     void Start() {
         anim = GetComponent<Animator>();
-        // Cache our start position, which is really the only thing we need
-        // (in addition to our current position, and the target).
-        startPos = transform.position;
 
         GuiController gui = GuiController.GetInstance();
         if (lootType == LOOT_TYPE.XP || lootType == LOOT_TYPE.HEALTH) {

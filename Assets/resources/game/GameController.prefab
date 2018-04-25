@@ -51,7 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4de65126caf7f344a2464400777d898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testList:
+  - test1: 0
+    test2: 
+  - test1: 0
+    test2: 
   lootList:
   - {fileID: 1214836344136822, guid: 4f2255e8f1aa56243aeff835eb7dd48d, type: 2}
   - {fileID: 1959791826922736, guid: 8162d9aca187c4644a6820a2a1fb04cb, type: 2}
   lootEffect: {fileID: 1353203011414960, guid: 645f59ef81b6a4246bf888af862fc59e, type: 2}
+  lootText: {fileID: 1177338674285746, guid: 26afdb55d5b71924f96532b07d5d56dd, type: 2}
+  lootTextEffect: {fileID: 1180366017802572, guid: 3fd846ca7285d53489ad4ea35b659b0e,
+    type: 2}
+  lootSound: {fileID: 8300000, guid: e267f808665036643b76ff3095479c7f, type: 3}

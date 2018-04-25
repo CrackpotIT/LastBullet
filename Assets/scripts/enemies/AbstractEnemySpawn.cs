@@ -13,8 +13,13 @@ public abstract class AbstractEnemySpawn: MonoBehaviour {
 
     public virtual void Initialize(Vector2 newTargetPosition, float directionX) {
         this.targetPosition = newTargetPosition;
-        this.directionX = directionX;
-        transform.localScale = new Vector3(-directionX, transform.localScale.y, transform.localScale.z);
+        this.Initialize(directionX);
     }
-    
+
+    public virtual void Initialize(float directionX) {
+        Debug.Log("Init Spawn dirX:" + directionX);
+        this.directionX = directionX;
+        transform.localScale = new Vector3(directionX, transform.localScale.y, transform.localScale.z);
+    }
+
 }

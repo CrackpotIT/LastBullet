@@ -182,6 +182,8 @@ MonoBehaviour:
   directionX: 0
   offSetY: -0.1
   damping: 0.3
+  cartSprites: []
+  itemList: []
 --- !u!114 &114783234143742180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,17 +195,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4169d3c3c9df4be41b8c583b63ef41fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  targetPosition: {x: 0, y: 0}
-  directionX: 0
   health: 3
   xp: 5
   impactEffect: {fileID: 1898104721346376, guid: 2b400a5e7a1597d468016760f5b9059e,
     type: 2}
   explosionEffect: {fileID: 1806759542141970, guid: 5b2d8d8a1a8086b418dfdb9e35f471de,
     type: 2}
-  impactSound: {fileID: 8300000, guid: 1bf27f6d3aabe2c44ab58d13160e8190, type: 3}
-  explosionSound: {fileID: 8300000, guid: c24bd052b4f634946ae22ea93bdf0f2c, type: 3}
+  impactSound: {fileID: 8300000, guid: 54ae4eb5c224ee04eb5555bf6796eb0b, type: 3}
+  explosionSound: {fileID: 8300000, guid: 476f3dad4eff8534e8ba12cd4a4a3796, type: 3}
   spawnObject: {fileID: 1592538752715862, guid: afcbe5a2cb624b54f98f93a34149643f,
     type: 2}
 --- !u!212 &212408662133419452

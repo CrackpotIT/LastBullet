@@ -135,19 +135,19 @@ MonoBehaviour:
   muzzlePositionBottom: {fileID: 4863066293273752}
   shellBounceOffsetX: 0
   gunStruct:
-    timeBetweenShots: 0.5
+    timeBetweenShots: 0.4
     timeToReload: 2
     damageModifier: 0
-    bulletSpeed: 30
+    bulletSpeed: 50
     bullet: {fileID: 114453691313324992, guid: ba5ee39adbad6ba47a6535dbd5fc0edb, type: 2}
     clipSize: 12
-    gunShotSound: {fileID: 8300000, guid: eeb04ff8d5e105749b6814646ab04a69, type: 3}
-    gunEmptySound: {fileID: 8300000, guid: ae47af6205ca1ed4884dda79b506a686, type: 3}
-    gunReloadOutSound: {fileID: 8300000, guid: a0bed9da04beb8c40b9e1bbc0c26ed6b, type: 3}
-    gunReloadInsertSound: {fileID: 8300000, guid: 3938017c130286d4dba42f89b599dbef,
+    gunShotSound: {fileID: 8300000, guid: 603f88ada3e7a0840b102af7e0957b9b, type: 3}
+    gunEmptySound: {fileID: 8300000, guid: 24dec4e0adcb5d14e8450a62c065bca8, type: 3}
+    gunReloadOutSound: {fileID: 8300000, guid: 683f5d69736649849a22ec67e17f8e40, type: 3}
+    gunReloadInsertSound: {fileID: 8300000, guid: ac69d389c820b694e902f4a587f58f3b,
       type: 3}
-    gunReloadInSound: {fileID: 8300000, guid: 2ecb353f9ddc48742855cb0d3d9e663d, type: 3}
-    gunReloadSnapSound: {fileID: 8300000, guid: 954a1d9238b27d747ba4be543522f8e6,
+    gunReloadInSound: {fileID: 8300000, guid: 86b4c058f6b27b04286a06f3ab390d8e, type: 3}
+    gunReloadSnapSound: {fileID: 8300000, guid: 8bebca7cd6a9c1b4f97ce9a055daa200,
       type: 3}
 --- !u!212 &212538945102130512
 SpriteRenderer:
