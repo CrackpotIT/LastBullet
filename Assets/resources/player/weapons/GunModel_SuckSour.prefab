@@ -135,10 +135,10 @@ MonoBehaviour:
   muzzlePositionBottom: {fileID: 4863066293273752}
   shellBounceOffsetX: 0
   gunStruct:
-    timeBetweenShots: 0.4
+    timeBetweenShots: 0.38
     timeToReload: 2
     damageModifier: 0
-    bulletSpeed: 50
+    bulletSpeed: 60
     bullet: {fileID: 114453691313324992, guid: ba5ee39adbad6ba47a6535dbd5fc0edb, type: 2}
     clipSize: 12
     gunShotSound: {fileID: 8300000, guid: 603f88ada3e7a0840b102af7e0957b9b, type: 3}

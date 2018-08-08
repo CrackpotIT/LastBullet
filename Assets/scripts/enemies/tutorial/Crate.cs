@@ -12,12 +12,15 @@ public class Crate : AbstractEnemyDestructable {
     public AudioClip explosionSound;
 
     public GameObject spawnObject;
+    public GameObject cart;
 
     private SpriteRenderer spriteRenderer;
     private int damage;
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        cart = transform.parent.transform.parent.gameObject;
+        Debug.Log("Start cart obj:" + cart.name);
     }
 
 
@@ -32,14 +35,14 @@ public class Crate : AbstractEnemyDestructable {
         // instanciate sparkEmitter
         
         GameObject go = Instantiate(impactEffect, transform.position, transform.rotation);
-        go.transform.localScale = new Vector3(transform.parent.transform.localScale.x, transform.parent.transform.localScale.y, transform.parent.transform.localScale.z);
+        go.transform.localScale = new Vector3(cart.transform.localScale.x, cart.transform.localScale.y, cart.transform.localScale.z);
         go.transform.parent = EffectParent.GetInstance().transform;
     }
 
     public override void DestroyEvent() {
         SoundManager.PlaySFX(explosionSound);
         GameObject go = Instantiate(explosionEffect, transform.position, transform.rotation);
-        go.transform.localScale = new Vector3(transform.parent.transform.localScale.x, transform.parent.transform.localScale.y, transform.parent.transform.localScale.z);
+        go.transform.localScale = new Vector3(cart.transform.localScale.x, cart.transform.localScale.y, cart.transform.localScale.z);
         go.transform.parent = EffectParent.GetInstance().transform;
 
         Instantiate(spawnObject, transform.position, transform.rotation);

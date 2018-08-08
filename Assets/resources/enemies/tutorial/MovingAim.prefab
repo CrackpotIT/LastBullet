@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   xp: 3
-  sparkEmitter: {fileID: 1180366017802572, guid: 3fd846ca7285d53489ad4ea35b659b0e,
+  sparkEmitter: {fileID: 1371347871736428, guid: 1b45cb08318f6d5428e85bcb39ed189b,
     type: 2}
   hitSound: {fileID: 8300000, guid: 476f3dad4eff8534e8ba12cd4a4a3796, type: 3}
 --- !u!212 &212537378487025014

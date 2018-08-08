@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-
-    public List<SerializeTest> testList;
+    
     public List<GameObject> lootList;
     public GameObject lootEffect;
     public GameObject lootText;

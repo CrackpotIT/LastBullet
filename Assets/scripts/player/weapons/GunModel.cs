@@ -77,17 +77,20 @@ public class GunModel : AbstractModel {
     private void ReloadFinished() {
         // get bullets from inventory
         int bulletsInInventory = Inventory.instance.bullets[gunStruct.bullet.bulletType];
+        int remainingBullet = 0;
         if (currentClip > 0) {
             //Reload with bullet in chamber
-            currentClip = 1;
+            remainingBullet = currentClip;
         }
-        if (bulletsInInventory > gunStruct.clipSize) {
-            currentClip += gunStruct.clipSize; // Full Clip reload
+        if (bulletsInInventory >= gunStruct.clipSize) {
+            currentClip = gunStruct.clipSize; // Full Clip reload
+            Inventory.instance.bullets[gunStruct.bullet.bulletType] = bulletsInInventory - (currentClip - remainingBullet);            
         } else {
             currentClip += bulletsInInventory; // not enough bullets for full clip
+            Inventory.instance.bullets[gunStruct.bullet.bulletType] = 0;
         }
 
-        GuiController.GetInstance().RefreshBulletCount(currentClip, bulletsInInventory);
+        GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
         reloading = false;
         ShowClipEmptyLayer(false);
     }
@@ -110,7 +113,7 @@ public class GunModel : AbstractModel {
                 // remove bullet from clip
                 currentClip--;
                 // remove bullet from inventory
-                Inventory.instance.bullets[gunStruct.bullet.bulletType]--;
+                //Inventory.instance.bullets[gunStruct.bullet.bulletType]--;
 
                 GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
                 return true;
