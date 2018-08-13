@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class XpLoot: Loot {
 
-    public float amount;
+    public new void Start() {
+        base.lootType = LOOT_TYPE.XP;
+        base.Start();
+    }
 
     public override string GetText() {
         string text = "";

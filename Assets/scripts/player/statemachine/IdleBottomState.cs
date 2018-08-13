@@ -15,7 +15,7 @@ public class IdleBottomState: AbstractState {
 
     public override AbstractState UpdateState() {
         if (currentAction == ACTION.RELOAD) {
-            return new ReloadBottomState(playerController);
+            return new ReloadGameState(false, playerController);
         }
 
         if (currentAction == ACTION.TOP_LEFT || currentAction == ACTION.TOP_RIGHT) {

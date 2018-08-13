@@ -20,13 +20,13 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300012, guid: 61b7ad65f5c47284ea6c6737fcea1b04, type: 3}
-    - time: 0.083333336
+    - time: 0.055555556
       value: {fileID: 21300014, guid: 61b7ad65f5c47284ea6c6737fcea1b04, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 12
+  m_SampleRate: 18
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -48,7 +48,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.11111111
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -69,7 +69,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0.083333336
+  - time: 0.055555556
     functionName: AnimationEvent
     data: FIRE_RELEASE
     objectReferenceParameter: {fileID: 0}

@@ -52,7 +52,7 @@ Animator:
   m_GameObject: {fileID: 1959791826922736}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c5ffbf649f7fabe4fb4f4a65cdec14a2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 460d917577c41844a90cd584f4a0d3e1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -164,10 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c83d31e746d30949ab5aed7acae03a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootType: 3
-  takeSound: {fileID: 8300000, guid: e88ed948f03d5e644a6d4fba600bb2c5, type: 3}
-  collected: 0
+  defaultMinAmount: 5
+  defaultMaxAmount: 10
+  takeSound: {fileID: 8300000, guid: f4ccb568208c78a46bef878e0e107d43, type: 3}
+  collectSprite: {fileID: 21300000, guid: 27baf16c645571d4890314fd8dc07bdb, type: 3}
   speed: 20
+  collected: 0
+  lootType: 3
   amount: 0
 --- !u!212 &212378754216375758
 SpriteRenderer:
@@ -203,13 +206,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 79853753528960d488642af72d6ba692, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.68, y: 0.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0

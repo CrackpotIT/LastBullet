@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    public enum BULLET_TYPE { MM9, MM10, Point40, Point45 };
+    public enum BULLET_TYPE { Point32, MM9, Point45 };
 
     public BULLET_TYPE bulletType;
     public float damage;

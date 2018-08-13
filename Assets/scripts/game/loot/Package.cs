@@ -11,6 +11,7 @@ public class Package: MonoBehaviour {
     [Tooltip("How high the arc should be, in units")]
     public float arcHeight = 1;
 
+    public Loot.LOOT_AMOUNT lootAmount;
 
     Vector3 startPos;
     Vector3 targetPos;
@@ -44,7 +45,7 @@ public class Package: MonoBehaviour {
 
     void Arrived() {
         //Instantiate(arrivedEffect, transform.position, transform.rotation);
-        GameController.GetInstance().InstantiateLoot();
+        GameController.GetInstance().InstantiateLoot(lootAmount);
         Destroy(gameObject);
     }
 

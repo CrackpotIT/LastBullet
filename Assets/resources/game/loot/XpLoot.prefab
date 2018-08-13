@@ -164,10 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1651c354e030249b4c4d54b0c1ebe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootType: 1
-  takeSound: {fileID: 8300000, guid: 0a8c66615f5f5c14eb3867e3bca306ec, type: 3}
-  collected: 0
+  defaultMinAmount: 5
+  defaultMaxAmount: 15
+  takeSound: {fileID: 8300000, guid: 76c7732d6317bba46b3d0642d6f4796c, type: 3}
+  collectSprite: {fileID: 21300000, guid: 3c4b2a5e48b0cc04aa09219b164ddd85, type: 3}
   speed: 20
+  collected: 0
+  lootType: 1
   amount: 0
 --- !u!212 &212379759671480394
 SpriteRenderer:

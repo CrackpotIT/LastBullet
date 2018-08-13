@@ -5,20 +5,28 @@ using UnityEngine;
 public abstract class Loot : MonoBehaviour {
 
     public enum LOOT_TYPE { AMMUNITION, XP, HEALTH, COIN, UPGRADE };
-    public LOOT_TYPE lootType;
-    public AudioClip takeSound;
+    public enum LOOT_AMOUNT { LOW, MEDIUM, HIGH };
 
-    [HideInInspector]
-    public bool collected = false;
+    public int defaultMinAmount;
+    public int defaultMaxAmount;
+
+    public AudioClip takeSound;
+    public Sprite collectSprite;
 
     [Tooltip("Horizontal speed, in units/sec")]
     public float speed = 10;
-    
-    Vector3 targetPos;
 
+    [HideInInspector]
+    public bool collected = false;
+    [HideInInspector]
+    public LOOT_TYPE lootType;
+    [HideInInspector]
+    public int amount;
+
+    Vector3 targetPos;
     Animator anim;
 
-    void Start() {
+    public void Start() {
         anim = GetComponent<Animator>();
 
         GuiController gui = GuiController.GetInstance();
@@ -28,7 +36,21 @@ public abstract class Loot : MonoBehaviour {
             targetPos = gui.backgroundRight.transform.position;
         } else {
             targetPos = gui.backgroundCenter.transform.position;
-        }        
+        }  
+    }
+
+    public void InitAmount(LOOT_AMOUNT lootAmount) {        
+        int randomDefaultAmount = Random.Range(defaultMinAmount, (defaultMaxAmount + 1));
+
+        if (lootAmount == LOOT_AMOUNT.LOW) {
+            amount = randomDefaultAmount;
+        }
+        if (lootAmount == LOOT_AMOUNT.MEDIUM) {
+            amount = randomDefaultAmount * 2;
+        }
+        if (lootAmount == LOOT_AMOUNT.HIGH) {
+            amount = randomDefaultAmount * 4;
+        }
     }
 
     public void Collect() {
@@ -38,6 +60,8 @@ public abstract class Loot : MonoBehaviour {
         if (anim) {
             anim.enabled = false;
         }
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = collectSprite;
     }
 
     // Update is called once per frame

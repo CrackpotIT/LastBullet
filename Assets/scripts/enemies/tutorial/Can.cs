@@ -30,7 +30,6 @@ public class Can : AbstractEnemyDestructable {
         transform.parent = null;
         destroyed = true;
         // instanciate sparkEmitter
-        Debug.Log("Can DirectionX:" + directionX);
         Quaternion q = new Quaternion(transform.rotation.x, (directionX == -1 ? transform.rotation.y - 180 : transform.rotation.y), transform.rotation.z, transform.rotation.w);
         Instantiate(sparkEmitter, transform.position, q);
     }

@@ -18,23 +18,14 @@ public class PlayerController : MonoBehaviour {
     public GunModel gunModel;
     [HideInInspector]
     public PlayerModel playerModel;
-
+    [HideInInspector]
+    public ReloadGameController reloadGameController;
 
 
     void Start() {
-        GameObject instance = Instantiate(Resources.Load("player/weapons/GunModel_SuckSour", typeof(GameObject))) as GameObject;
-        instance.transform.position = transform.position;
-        instance.transform.parent = transform;
-
-        gunModel = instance.GetComponent<GunModel>();
-
-        SoundManager.SetGlobalVolume(.5f);
-
+        Debug.Log("PlayerController start!");
         currentState = new IdleTopState(AbstractState.ACTION.NA, this);
-
-        // search model for player and gun
-        //gunModel = transform.GetComponentInChildren<GunModel>();
-        playerModel = transform.GetComponentInChildren<PlayerModel>();
+        reloadGameController = GetComponent<ReloadGameController>();
     }
 
     private void Update() {

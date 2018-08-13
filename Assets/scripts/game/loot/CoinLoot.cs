@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class CoinLoot : Loot {
 
-    public int amount;
+
+    public new void Start() {
+        base.lootType = LOOT_TYPE.COIN;
+        base.Start();
+    }
 
     public override string GetText() {
+        
         string text = "";
         text = "+" + amount.ToString() + " coins";
         return text;
     }
 
     public override void TakeIt() {
-        Inventory.instance.coins += amount;
+        Inventory.GetInstance().coins += amount;
     }
     
 }

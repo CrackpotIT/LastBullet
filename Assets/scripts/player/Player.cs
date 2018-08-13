@@ -9,11 +9,27 @@ public class Player: MonoBehaviour {
     public float xp = 0;
     public int level = 0;
 
+    private GunModel activeGun;
+
     // Static instance
     static Player _instance;
 
     private void Start() {
         _instance = this;
+        PlayerController pc = this.GetComponent<PlayerController>();
+        if (pc) {
+            Debug.Log("PlayerController Found!");
+
+            GameObject instance = Instantiate(Resources.Load("player/weapons/GunModel_SuckSour", typeof(GameObject))) as GameObject;
+            instance.transform.position = transform.position;
+            instance.transform.parent = transform;
+            activeGun = instance.GetComponent<GunModel>();
+
+            pc.gunModel = activeGun;
+            pc.playerModel = transform.GetComponentInChildren<PlayerModel>();            
+        }
+
+        SoundManager.SetGlobalVolume(.5f);
     }
 
 
@@ -29,6 +45,12 @@ public class Player: MonoBehaviour {
         float nextLevel = (level + 1) * 100;
         float xpPercent = xp / nextLevel;
         GuiController.GetInstance().RefreshXpCount(xpPercent);
+    }
+
+    public void AddAmmunition(Bullet.BULLET_TYPE bulletType, int amount) {
+        Inventory inv = Inventory.GetInstance();
+        inv.bullets[bulletType] += amount;
+        GuiController.GetInstance().RefreshBulletCount(activeGun.currentClip, inv.bullets[bulletType]);
     }
 
     public void Damage(int damage) {

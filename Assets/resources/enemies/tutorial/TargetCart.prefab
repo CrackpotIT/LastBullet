@@ -186,11 +186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2830f16ce58d7754c9cca9f940adbd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 12
   targetPosition: {x: 0, y: 0}
   directionX: 0
   offSetY: -0.1
-  damping: 0.5
+  damping: 0.2
   cartSprites:
   - {fileID: 21300000, guid: 5b8205a4f980f7641b4670bf9aef3ee9, type: 3}
   - {fileID: 21300000, guid: 1beb079375500544386076a6394cc962, type: 3}

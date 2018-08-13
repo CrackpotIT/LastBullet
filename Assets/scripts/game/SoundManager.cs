@@ -130,7 +130,17 @@ public class SoundManager: MonoBehaviour {
         Destroy(sfxSource);
     }
 
+    IEnumerator PlayClipAfterTime(AudioClip sfxClip, float time) {
+        yield return new WaitForSeconds(time);
+        PlaySFX(sfxClip);
+    }
+
     // ====================== SFX Functions =================================
+    public static void PlaySFXDelay(AudioClip sfxClip, float time) {
+        SoundManager soundMan = GetInstance();
+        soundMan.StartCoroutine(soundMan.PlayClipAfterTime(sfxClip, time));
+    }
+
     public static void PlaySFX(AudioClip sfxClip) {
         SoundManager soundMan = GetInstance();
         AudioSource source = soundMan.GetSFXSource();

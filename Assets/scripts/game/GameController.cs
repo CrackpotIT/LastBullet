@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
     
     public List<GameObject> lootList;
-    public GameObject lootEffect;
+    public GameObject spawnObject;
+    public GameObject lootCreate;
     public GameObject lootText;
-    public GameObject lootTextEffect;
     public AudioClip lootSound;
 
     private Coordinates coordinates;
+    private GameObject lootBrackets;
 
     // Static instance
     static GameController _instance;
@@ -31,7 +32,7 @@ public class GameController : MonoBehaviour {
         return _instance;
     }
 
-    public void InstantiateLoot() {
+    public void InstantiateLoot(Loot.LOOT_AMOUNT lootAmount) {
         // zuerst alte Loots löschen
         foreach (Transform child in coordinates.loot) {
             GameObject.Destroy(child.gameObject);
@@ -40,10 +41,12 @@ public class GameController : MonoBehaviour {
         // play sound
         SoundManager.PlaySFX(lootSound);
 
-        Instantiate(lootEffect, coordinates.loot);
+        lootBrackets = Instantiate(lootCreate, coordinates.loot);
         
         int random = Random.Range(0, lootList.Count);
-        Instantiate(lootList[random], coordinates.loot);
+        GameObject lootGO = Instantiate(lootList[random], coordinates.loot);
+        Loot loot = lootGO.GetComponent<Loot>();
+        loot.InitAmount(lootAmount);
     }
 
     public void GetLoot() {
@@ -51,13 +54,15 @@ public class GameController : MonoBehaviour {
         if (!loot) { 
             Debug.Log("No loot!");
         } else {
-            loot.Collect();
-            
-            GameObject lootTextInstance = Instantiate(lootText);
-            TextMesh textMesh = lootTextInstance.GetComponent<TextMesh>();
-            textMesh.text = loot.GetText();
+            if (!loot.collected) {
+                loot.Collect();
 
-            Instantiate(lootTextEffect, lootTextInstance.transform);
+                GameObject lootTextInstance = Instantiate(lootText);
+                TextMesh textMesh = lootTextInstance.GetComponent<TextMesh>();
+                textMesh.text = loot.GetText();
+
+                Destroy(lootBrackets);
+            }
         }
     }
 

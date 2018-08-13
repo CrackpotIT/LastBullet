@@ -11,10 +11,11 @@ public class GunModel : AbstractModel {
 
     public GunStruct gunStruct;
 
+    public int currentClip;
+
     private GameObject[] shellBounceUpArray;
     private GameObject[] shellBounceDownArray;
-
-    private int currentClip;
+        
     private float lastShot = 0;
     private bool reloading = false;
 
@@ -22,7 +23,7 @@ public class GunModel : AbstractModel {
     public override void Start() {
         base.Start();
         currentClip = gunStruct.clipSize;
-        GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
+        GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.GetInstance().bullets[gunStruct.bullet.bulletType]);
 
         shellBounceUpArray = new GameObject[3];
         shellBounceUpArray[0] = (GameObject)Resources.Load("player/weapons/ShellBounceUp1");
@@ -65,18 +66,18 @@ public class GunModel : AbstractModel {
 
     public void Reload() {
         // check if ammunition left or inventory empty
-        if (!reloading && Inventory.instance.bullets[gunStruct.bullet.bulletType] > 0) {
+        if (!reloading && Inventory.GetInstance().bullets[gunStruct.bullet.bulletType] > 0) {
             reloading = true;
-            Invoke("ReloadFinished", gunStruct.timeToReload);
+            //Invoke("ReloadFinished", gunStruct.timeToReload);
         }
     }
     public bool IsReloading() {
         return reloading;
     }
 
-    private void ReloadFinished() {
+    public void ReloadFinished() {
         // get bullets from inventory
-        int bulletsInInventory = Inventory.instance.bullets[gunStruct.bullet.bulletType];
+        int bulletsInInventory = Inventory.GetInstance().bullets[gunStruct.bullet.bulletType];
         int remainingBullet = 0;
         if (currentClip > 0) {
             //Reload with bullet in chamber
@@ -84,13 +85,13 @@ public class GunModel : AbstractModel {
         }
         if (bulletsInInventory >= gunStruct.clipSize) {
             currentClip = gunStruct.clipSize; // Full Clip reload
-            Inventory.instance.bullets[gunStruct.bullet.bulletType] = bulletsInInventory - (currentClip - remainingBullet);            
+            Inventory.GetInstance().bullets[gunStruct.bullet.bulletType] = bulletsInInventory - (currentClip - remainingBullet);            
         } else {
             currentClip += bulletsInInventory; // not enough bullets for full clip
-            Inventory.instance.bullets[gunStruct.bullet.bulletType] = 0;
+            Inventory.GetInstance().bullets[gunStruct.bullet.bulletType] = 0;
         }
 
-        GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
+        GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.GetInstance().bullets[gunStruct.bullet.bulletType]);
         reloading = false;
         ShowClipEmptyLayer(false);
     }
@@ -115,7 +116,7 @@ public class GunModel : AbstractModel {
                 // remove bullet from inventory
                 //Inventory.instance.bullets[gunStruct.bullet.bulletType]--;
 
-                GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.instance.bullets[gunStruct.bullet.bulletType]);
+                GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.GetInstance().bullets[gunStruct.bullet.bulletType]);
                 return true;
             } else {
                 SoundManager.PlaySFX(gunStruct.gunEmptySound);

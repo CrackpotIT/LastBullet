@@ -60,7 +60,6 @@ public class Spawner : MonoBehaviour {
 		
 		float threshold = spawnsPerSecond * Time.deltaTime / 4;
 		float random = Random.value;
-		
 		if (random < threshold) {
             if (Time.time > (lastSpawn + minTimeBetweenSpawns)) {
                 lastSpawn = Time.time;
@@ -68,7 +67,7 @@ public class Spawner : MonoBehaviour {
             }
             return false;
 		} else {
-            if (Time.time > (lastSpawn + (meanSpawnTime * 4 * 2))) {
+            if (Time.time > (lastSpawn + (meanSpawnTime * 4))) {
                 lastSpawn = Time.time;
                 return true;
             }

@@ -61,7 +61,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &61920711261766496
 BoxCollider2D:
@@ -110,8 +110,9 @@ MonoBehaviour:
     type: 2}
   impactSound: {fileID: 8300000, guid: 54ae4eb5c224ee04eb5555bf6796eb0b, type: 3}
   explosionSound: {fileID: 8300000, guid: 476f3dad4eff8534e8ba12cd4a4a3796, type: 3}
-  spawnObject: {fileID: 1592538752715862, guid: afcbe5a2cb624b54f98f93a34149643f,
-    type: 2}
+  chanceLoot: 0.5
+  lootAmount: 1
+  cart: {fileID: 0}
 --- !u!212 &212735122346308626
 SpriteRenderer:
   m_ObjectHideFlags: 1

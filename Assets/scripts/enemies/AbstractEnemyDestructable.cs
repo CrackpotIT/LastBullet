@@ -16,6 +16,10 @@ public abstract class AbstractEnemyDestructable : MonoBehaviour {
             Bullet bullet = coll.gameObject.GetComponent<Bullet>();
             if (!bullet.destroyed) {
                 health -= bullet.damage;
+                bullet.destroyed = true;
+                // Destroy bullet
+                Destroy(coll.gameObject);
+
                 if (health > 0) {
                     DamageEvent();
                 } else {
@@ -23,10 +27,6 @@ public abstract class AbstractEnemyDestructable : MonoBehaviour {
                     Player.GetInstance().AddXp(xp);
                 }
             }
-
-            bullet.destroyed = true;
-            // Destroy bullet
-            Destroy(coll.gameObject);
         }
     }
 
