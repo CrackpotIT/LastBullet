@@ -159,7 +159,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.5714285
+  - time: 1.6428572
     functionName: AnimationEvent
     data: CLIP_SNAP
     objectReferenceParameter: {fileID: 0}
@@ -168,7 +168,7 @@ AnimationClip:
     messageOptions: 0
   - time: 1.7142857
     functionName: AnimationEvent
-    data: 
+    data: END
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
     public Coordinates coordinates;
-    
+    public ReloadGameController reloadGameController;
+
     [HideInInspector]
     public int currentDirectionX = 1;  // 1=right, -1=left
     [HideInInspector]
@@ -17,15 +18,12 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public GunModel gunModel;
     [HideInInspector]
-    public PlayerModel playerModel;
-    [HideInInspector]
-    public ReloadGameController reloadGameController;
+    public PlayerModel playerModel;    
 
 
     void Start() {
         Debug.Log("PlayerController start!");
         currentState = new IdleTopState(AbstractState.ACTION.NA, this);
-        reloadGameController = GetComponent<ReloadGameController>();
     }
 
     private void Update() {

@@ -136,7 +136,7 @@ MonoBehaviour:
   shellBounceOffsetX: 0
   gunStruct:
     timeBetweenShots: 0.3
-    timeToReload: 2.2
+    timeToReload: 3
     damageModifier: 0
     bulletSpeed: 60
     bullet: {fileID: 114453691313324992, guid: f50cc69a7c2105641875b2e91e0708f5, type: 2}

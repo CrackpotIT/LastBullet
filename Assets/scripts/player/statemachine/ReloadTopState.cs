@@ -2,30 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReloadTopState: AbstractState {
-
-    private float time;
-    private bool wonMiniGame;
+public class ReloadTopState: AbstractReloadState {
+    
     private bool isReloading;
 
-    public ReloadTopState(bool wonMiniGame, PlayerController playerController) : base(playerController) {
-        this.wonMiniGame = wonMiniGame;
+    public ReloadTopState(PlayerController playerController) : base(playerController) {
+    }
+
+    public override AnimationClip GetPlayerAnimationClip() {
+        return playerController.playerModel.GetAnimationClip(PlayerModel.CLIP_RELOAD_TOP);
     }
 
     public override void OnEnter() {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_TOP, true);
         playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_TOP, true);
         playerController.gunModel.Reload();
-        AnimationClip clipPlayer = playerController.playerModel.GetAnimationClip(PlayerModel.CLIP_RELOAD_TOP);
-        float gunModelReloadTime = playerController.gunModel.gunStruct.timeToReload;
-        float reloadTime = (wonMiniGame ? gunModelReloadTime / 2 : gunModelReloadTime);
-        float reloadSpeedModifier = clipPlayer.length / reloadTime;
-        Debug.Log("ReloadSpeed Mod:" + reloadSpeedModifier);
-        playerController.playerModel.animator.speed = reloadSpeedModifier;
-        playerController.gunModel.animator.speed = reloadSpeedModifier;
-
+        SetReloadSpeed(1);        
         isReloading = true;
-        time = Time.time;
+
+        playerController.reloadGameController.StartReloadGame(this);
     }
 
     public override AbstractState UpdateState() {
@@ -45,6 +40,8 @@ public class ReloadTopState: AbstractState {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_TOP, false);
         playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_TOP, false);
         playerController.gunModel.ReloadFinished();
+
+        playerController.reloadGameController.EndReloadGame();
     }
 
     public override void HandleAnimEvent(string parameter) {
@@ -59,6 +56,8 @@ public class ReloadTopState: AbstractState {
         }
         if (parameter == "CLIP_SNAP") {
             SoundManager.PlaySFX(playerController.gunModel.gunStruct.gunReloadSnapSound);
+        }
+        if (parameter == "END") {
             isReloading = false;
         }
     }
