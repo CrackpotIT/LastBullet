@@ -60,3 +60,5 @@ MonoBehaviour:
   lootCreate: {fileID: 1092852434974860, guid: 38763c8b1dee63241a47a6030d375f63, type: 2}
   lootText: {fileID: 1177338674285746, guid: 26afdb55d5b71924f96532b07d5d56dd, type: 2}
   lootSound: {fileID: 8300000, guid: 0f9127ebec6849040a4d3b4ae1cda6b4, type: 3}
+  mouseClickEffect: {fileID: 1438528629694384, guid: 332455a0f8c69ae49a5ffd907cf751b9,
+    type: 2}

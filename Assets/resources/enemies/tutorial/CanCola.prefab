@@ -121,6 +121,7 @@ MonoBehaviour:
   xp: 1
   sparkEmitter: {fileID: 1036637142665286, guid: 45b09f6f789c3fb40a94e030c37b553d,
     type: 2}
+  textEffect: {fileID: 1002615710248736, guid: 3152ba705e967c843b15659cd982b132, type: 2}
   hitSound: {fileID: 8300000, guid: 95ad64cf521bee54b9fe9017957d32d7, type: 3}
 --- !u!212 &212477709909983700
 SpriteRenderer:

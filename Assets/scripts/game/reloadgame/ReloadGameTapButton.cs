@@ -8,26 +8,18 @@ public class ReloadGameTapButton : MonoBehaviour {
 
     public ALIGN alignment;
     public float updateInterval = 0.1F;
+    public float offsetX = 1F;
+    public float offsetY = .75F;
 
 
     private SpriteRenderer spriteRenderer;
-
     private Animator clipAnimator;
-    private ReloadGameController gameController;
 
 
     // Use this for initialization
     void Awake () {
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
-
         clipAnimator = transform.GetComponent<Animator>();
-
-        gameController = transform.parent.GetComponent<ReloadGameController>();
-        if (!gameController) {
-            Debug.LogError("No ReloadGameController in parent found!");
-        }
-
     }
 
     public void StartGame() {
@@ -60,20 +52,18 @@ public class ReloadGameTapButton : MonoBehaviour {
         float z = transform.position.z;
         Vector3 vector = Camera.main.ViewportToWorldPoint(new Vector3(x, y, 0));
         vector.z = z;
-        if (x == 0F) {
-            vector.x += halveWidth;
+        if (alignment == ALIGN.LEFT) {
+            vector.x += halveWidth + offsetX;
         }
-        if (x == 1F) {
-            vector.x -= halveWidth;
+        if (alignment == ALIGN.RIGHT) {
+            vector.x -= halveWidth + offsetX;
         }
+        vector.y -= offsetY;
         transform.position = vector;
     }
     
 
-    void OnMouseDown() {
-        if (gameController) {
-            gameController.Click();
-        }
+    public void Click() {
         clipAnimator.speed = 1;
     }
 

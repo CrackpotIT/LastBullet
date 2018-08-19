@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ReloadGameController : MonoBehaviour {
-
-    public GameObject inputGameObject;
+    
     public float countInterval = 1;
     public float maxClickRatioPerSecond = 5;
-    
+    public ReloadGameTapButton buttonLeft;
+    public ReloadGameTapButton buttonRight;
 
     private AbstractReloadState currentReloadState;
     private float startTime;
@@ -46,30 +46,24 @@ public class ReloadGameController : MonoBehaviour {
         Debug.Log("Start Reload game:");
         currentReloadState = reloadState;
 
-        inputGameObject.SetActive(false);
-        gameObject.SetActive(true);
+        InputCanvasController.GetInstance().SwitchReloadGameMode();
         clickCount = 0;
         startTime = Time.time;
-        lastTime = startTime;        
+        lastTime = startTime;
 
-        foreach (ReloadGameTapButton button in children) {
-            button.StartGame();
-            button.RefreshPosition();
-        }
+        buttonLeft.StartGame();
+        buttonRight.StartGame();
+
     }
 
     public void EndReloadGame() {
-        foreach (ReloadGameTapButton button in children) {
-            button.EndGame();
-        }
+        buttonLeft.EndGame();
+        buttonRight.EndGame();
 
-        inputGameObject.SetActive(true);
-        gameObject.SetActive(false);
-
-
+        InputCanvasController.GetInstance().SwitchNormalMode();
     }
 
-    public void Click() {
+    public void EventReloadClick() {
         clickCount++;
     }
 }

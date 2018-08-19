@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour {
     public GameObject lootText;
     public AudioClip lootSound;
 
+    public GameObject mouseClickEffect;
+
     private Coordinates coordinates;
     private GameObject lootBrackets;
 
@@ -81,6 +83,33 @@ public class GameController : MonoBehaviour {
         foreach (Spawner spawner in spawnerList) {
             spawner.RefreshPosition();
         }
+
+        // Refresh Shoot Buttons
+        ShootButtonController[] shootButtons = GameObject.FindObjectsOfType<ShootButtonController>();
+        foreach (ShootButtonController shootButtonImage in shootButtons) {
+            shootButtonImage.RefreshPosition();
+        }        
+
+        // Refresh Reload Buttons
+        ReloadGameTapButton[] reloadButtons = GameObject.FindObjectsOfType<ReloadGameTapButton>();
+        foreach (ReloadGameTapButton reloadButton in reloadButtons) {
+            reloadButton.RefreshPosition();
+        }
     }
-    
+
+    public void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            Debug.Log("Pressed Mouse Button!");
+
+            Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            pz.z = 0;
+            
+            GameObject mouseClick = Instantiate(mouseClickEffect);
+            mouseClick.transform.position = pz;
+            int randomX = Random.Range(0, 2);
+            int randomY = Random.Range(0, 2);
+            mouseClick.transform.localScale = new Vector3((randomX == 1 ? 1 : -1), (randomY == 1 ? 1 : -1), 1);
+        }
+    }
+
 }
