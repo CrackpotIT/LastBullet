@@ -10,7 +10,7 @@ public class IdleTopState : AbstractState {
 
     public override void OnEnter() {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_TOP, true);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_TOP, true);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.IDLE, true);
     }
 
     public override AbstractState UpdateState() {
@@ -35,6 +35,6 @@ public class IdleTopState : AbstractState {
 
     public override void OnExit() {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_TOP, false);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.IDLE_TOP, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.IDLE, false);
     }
 }

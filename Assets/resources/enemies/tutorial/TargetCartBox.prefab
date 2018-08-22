@@ -131,7 +131,7 @@ MonoBehaviour:
   moveSpeed: 6
   targetPosition: {x: 0, y: 0}
   directionX: 0
-  offSetY: -0.64
+  offSetY: -0.16
   damping: 0.3
   cartSprites:
   - {fileID: 21300000, guid: 7ab55b15ca74f304a9bb7484978a842e, type: 3}

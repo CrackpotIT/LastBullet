@@ -12,7 +12,7 @@ public class FireTopState: AbstractState {
     public override void OnEnter() {
         if (playerController.gunModel.HasAmmunition()) {
             playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP, true);
-            playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP, true);
+            playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.FIRE, true);
         } else {
             animationFinished = true;
         }
@@ -28,13 +28,13 @@ public class FireTopState: AbstractState {
 
     public override void OnExit() {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP, false);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP, false);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP_RELEASE, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.FIRE, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.FIRE_RELEASE, false);
     }
 
     public override void HandleAnimEvent(string parameter) {
         if (parameter == AbstractModel.ANIM_EVENT_PARAMS.FIRE_RELEASE.ToString()) {
-            playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.FIRE_TOP_RELEASE, true);
+            playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.FIRE_RELEASE, true);
         } else {
             animationFinished = true;
         }

@@ -21,7 +21,7 @@ public class ShootButtonController : MonoBehaviour {
     private Color colorClicked;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         colorUnclicked = spriteRenderer.color;
         colorClicked = new Color();
@@ -61,7 +61,6 @@ public class ShootButtonController : MonoBehaviour {
 
 
     private void SetPosition(float x, float y) {
-        Debug.Log("Refresh Pos");
         float halveWidth = spriteRenderer.sprite.bounds.size.x / 2F;
         // keep z-position
         float z = transform.position.z;

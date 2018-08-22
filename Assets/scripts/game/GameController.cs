@@ -86,6 +86,7 @@ public class GameController : MonoBehaviour {
 
         // Refresh Shoot Buttons
         ShootButtonController[] shootButtons = GameObject.FindObjectsOfType<ShootButtonController>();
+        Debug.Log("Found Shoot btns: " + shootButtons);
         foreach (ShootButtonController shootButtonImage in shootButtons) {
             shootButtonImage.RefreshPosition();
         }        
@@ -99,7 +100,6 @@ public class GameController : MonoBehaviour {
 
     public void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("Pressed Mouse Button!");
 
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;

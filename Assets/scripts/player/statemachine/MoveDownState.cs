@@ -10,7 +10,7 @@ public class MoveDownState : AbstractState {
 
     public override void OnEnter() {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, true);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, true);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.MOVE_DOWN, true);
         playerController.MovePlayer(playerController.coordinates.bottom.position);
     }
 
@@ -29,6 +29,6 @@ public class MoveDownState : AbstractState {
 
     public override void OnExit() {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, false);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.MOVE_DOWN, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.MOVE_DOWN, false);
     }
 }

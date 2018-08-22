@@ -15,7 +15,7 @@ public class ReloadBottomState: AbstractReloadState {
 
     public override void OnEnter() {
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_BOTTOM, true);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_BOTTOM, true);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.RELOAD, true);
         playerController.gunModel.Reload();
         SetReloadSpeed(1);
 
@@ -39,7 +39,7 @@ public class ReloadBottomState: AbstractReloadState {
         playerController.gunModel.animator.speed = 1;
 
         playerController.playerModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_BOTTOM, false);
-        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS.RELOAD_BOTTOM, false);
+        playerController.gunModel.SetAnimatorBool(AbstractModel.ANIM_PARAMS_GUNS.RELOAD, false);
         playerController.gunModel.ReloadFinished();
 
         playerController.reloadGameController.EndReloadGame();

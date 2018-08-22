@@ -20,7 +20,7 @@ public class Player: MonoBehaviour {
         if (pc) {
             Debug.Log("PlayerController Found!");
 
-            GameObject instance = Instantiate(Resources.Load("player/weapons/GunModel_SuckSour", typeof(GameObject))) as GameObject;
+            GameObject instance = Instantiate(Resources.Load("player/weapons/GunModel_Wilson", typeof(GameObject))) as GameObject;
             instance.transform.position = transform.position;
             instance.transform.parent = transform;
             activeGun = instance.GetComponent<GunModel>();

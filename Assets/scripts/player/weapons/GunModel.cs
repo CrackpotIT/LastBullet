@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GunModel : AbstractModel {
 
-    public Transform muzzlePositionTop;
-    public Transform muzzlePositionBottom;
+    public Transform muzzlePosition;
     
     public float shellBounceOffsetX;
 
@@ -13,8 +12,7 @@ public class GunModel : AbstractModel {
 
     public int currentClip;
 
-    private GameObject[] shellBounceUpArray;
-    private GameObject[] shellBounceDownArray;
+    private GameObject[] shellBounceArray;
         
     private float lastShot = 0;
     private bool reloading = false;
@@ -25,20 +23,15 @@ public class GunModel : AbstractModel {
         currentClip = gunStruct.clipSize;
         GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.GetInstance().bullets[gunStruct.bullet.bulletType]);
 
-        shellBounceUpArray = new GameObject[3];
-        shellBounceUpArray[0] = (GameObject)Resources.Load("player/weapons/ShellBounceUp1");
-        shellBounceUpArray[1] = (GameObject)Resources.Load("player/weapons/ShellBounceUp2");
-        shellBounceUpArray[2] = (GameObject)Resources.Load("player/weapons/ShellBounceUp3");
-
-        shellBounceDownArray = new GameObject[3];
-        shellBounceDownArray[0] = (GameObject)Resources.Load("player/weapons/ShellBounceDown1");
-        shellBounceDownArray[1] = (GameObject)Resources.Load("player/weapons/ShellBounceDown2");
-        shellBounceDownArray[2] = (GameObject)Resources.Load("player/weapons/ShellBounceDown3");
+        shellBounceArray = new GameObject[3];
+        shellBounceArray[0] = (GameObject)Resources.Load("player/weapons/ShellBounceUp1");
+        shellBounceArray[1] = (GameObject)Resources.Load("player/weapons/ShellBounceUp2");
+        shellBounceArray[2] = (GameObject)Resources.Load("player/weapons/ShellBounceUp3");        
     }
 
-    public override void SetAnimatorBool(ANIM_PARAMS parameter, bool value) {
+    public override void SetAnimatorBool(ANIM_PARAMS_GUNS parameter, bool value) {
         base.SetAnimatorBool(parameter, value);
-        if (parameter == ANIM_PARAMS.FIRE_TOP_RELEASE || parameter == ANIM_PARAMS.FIRE_BOTTOM_RELEASE) {
+        if (parameter == ANIM_PARAMS_GUNS.FIRE_RELEASE) {
             if (!HasAmmunition()) {
                 ShowClipEmptyLayer(true);
             }
@@ -102,8 +95,7 @@ public class GunModel : AbstractModel {
 
             if (HasAmmunition()) {
                 SoundManager.PlaySFX(gunStruct.gunShotSound);
-                Transform transformToUser = (topPosition ? muzzlePositionTop : muzzlePositionBottom);
-                Bullet newBullet = Instantiate(gunStruct.bullet, transformToUser.position, transformToUser.rotation);
+                Bullet newBullet = Instantiate(gunStruct.bullet, muzzlePosition.position, muzzlePosition.rotation);
                 newBullet.InitBullet(gunStruct.bulletSpeed, gunStruct.damageModifier, directionX);
                 newBullet.transform.parent = EffectParent.GetInstance().transform;
                 
@@ -128,8 +120,7 @@ public class GunModel : AbstractModel {
 
 
     private void ThrowShell(int directionX, bool topPosition) {
-        int random = Random.Range(0, shellBounceUpArray.Length);
-        GameObject[] shellBounceArray = (topPosition ? shellBounceUpArray : shellBounceDownArray);
+        int random = Random.Range(0, this.shellBounceArray.Length);
         GameObject shellBounceInstance = Instantiate(shellBounceArray[random], transform.position, transform.rotation);
         Vector3 shellScale = shellBounceInstance.transform.localScale;
         shellBounceInstance.transform.localScale = new Vector3(directionX * shellScale.x, shellScale.y, shellScale.z);
