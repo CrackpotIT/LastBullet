@@ -11,7 +11,12 @@ public class Shell : MonoBehaviour {
         SoundManager.PlaySFX(shellPlingSound);
     }
 
-    public void DestroyMe() {
-        Destroy(gameObject);
+    public void AnimationEnd() {
+        //Destroy(gameObject);
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Coordinates coordinates = GameObject.FindObjectOfType<Coordinates>();
+        if (transform.position == coordinates.top.transform.position) {
+            sr.sortingOrder = 0;
+        }
     }
 }

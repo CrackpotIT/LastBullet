@@ -120,6 +120,12 @@ MonoBehaviour:
     gunReloadSnapSound: {fileID: 8300000, guid: 8bebca7cd6a9c1b4f97ce9a055daa200,
       type: 3}
   currentClip: 0
+  shellBounceArray:
+  - {fileID: 114779786141524840, guid: 0bb38ea77d880454b8b1a0076775e410, type: 2}
+  - {fileID: 114120207735676772, guid: 89a71d18d7aca83458165a7dbcdc3dc6, type: 2}
+  - {fileID: 114805485985473966, guid: 741d682ea6f7e9d4f9c8ca8d06f23434, type: 2}
+  - {fileID: 114011096133624968, guid: 940a356344b9c11429cea6bca87ab79c, type: 2}
+  - {fileID: 114211448015488714, guid: dad0a4a3a794fad4a9b19db5dfae6e3e, type: 2}
 --- !u!212 &212538945102130512
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -12,7 +12,9 @@ public class GunModel : AbstractModel {
 
     public int currentClip;
 
-    private GameObject[] shellBounceArray;
+    public Shell[] shellBounceArray;
+
+    //private GameObject[] shellBounceArray;
         
     private float lastShot = 0;
     private bool reloading = false;
@@ -23,10 +25,7 @@ public class GunModel : AbstractModel {
         currentClip = gunStruct.clipSize;
         GuiController.GetInstance().RefreshBulletCount(currentClip, Inventory.GetInstance().bullets[gunStruct.bullet.bulletType]);
 
-        shellBounceArray = new GameObject[3];
-        shellBounceArray[0] = (GameObject)Resources.Load("player/weapons/ShellBounceUp1");
-        shellBounceArray[1] = (GameObject)Resources.Load("player/weapons/ShellBounceUp2");
-        shellBounceArray[2] = (GameObject)Resources.Load("player/weapons/ShellBounceUp3");        
+               
     }
 
     public override void SetAnimatorBool(ANIM_PARAMS_GUNS parameter, bool value) {
@@ -120,10 +119,19 @@ public class GunModel : AbstractModel {
 
 
     private void ThrowShell(int directionX, bool topPosition) {
-        int random = Random.Range(0, this.shellBounceArray.Length);
-        GameObject shellBounceInstance = Instantiate(shellBounceArray[random], transform.position, transform.rotation);
-        Vector3 shellScale = shellBounceInstance.transform.localScale;
-        shellBounceInstance.transform.localScale = new Vector3(directionX * shellScale.x, shellScale.y, shellScale.z);
-        shellBounceInstance.transform.parent = EffectParent.GetInstance().transform;
+        if (shellBounceArray != null && shellBounceArray.Length > 0) {
+            int random = Random.Range(0, this.shellBounceArray.Length);
+
+            GameObject shellBounceInstance = Instantiate(shellBounceArray[random].gameObject, transform.position, transform.rotation);
+            Vector3 shellScale = shellBounceInstance.transform.localScale;
+            shellBounceInstance.transform.localScale = new Vector3(directionX * shellScale.x, shellScale.y, shellScale.z);
+            shellBounceInstance.transform.parent = EffectParent.GetInstance().transform;
+
+            SpriteRenderer sr = shellBounceInstance.GetComponent<SpriteRenderer>();
+            Coordinates coordinates = GameObject.FindObjectOfType<Coordinates>();
+            if (shellBounceInstance.transform.position == coordinates.bottom.transform.position) {
+                sr.sortingOrder = 4;
+            }
+        }
     }
 }

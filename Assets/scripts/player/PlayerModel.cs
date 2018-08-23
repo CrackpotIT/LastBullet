@@ -11,10 +11,10 @@ public class PlayerModel : AbstractModel {
         base.SetAnimatorBool(parameter, value);
         // Sorting Order veraendern damit Patronenhuelsen oben im Hintergrund bleiben wenn man nach unten bewegt
         if (parameter == ANIM_PARAMS.MOVE_DOWN && value) {
-            spriteRenderer.sortingOrder = 2;
+            spriteRenderer.sortingOrder = 3;
         }
         if (parameter == ANIM_PARAMS.MOVE_UP && value) {
-            spriteRenderer.sortingOrder = 0;
+            spriteRenderer.sortingOrder = 1;
         }
     }
 }
